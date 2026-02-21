@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Code Field Manual — Body Page Sample</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --ink: #1B2332;
+    --ink-deep: #0F1520;
+    --text: #2D3748;
+    --text-light: #4A5568;
+    --muted: #A0AEC0;
+    --rule: #CBD5E0;
+    --rule-light: #E2E8F0;
+    --bg: #F7FAFC;
+    --white: #FFFFFF;
+
+    --teal: #0987A0;
+    --teal-bg: #E6FFFA;
+    --blue: #2B6CB0;
+    --blue-bg: #EBF8FF;
+    --purple: #553C9A;
+    --purple-bg: #FAF5FF;
+    --amber: #B7791F;
+    --amber-bg: #FFFFF0;
+    --red: #C53030;
+    --red-bg: #FFF5F5;
+    --green: #276749;
+    --green-bg: #F0FFF4;
+
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Lora', 'Palatino Linotype', Georgia, serif;
+    --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+
+    --page-w: 816px;
+    --page-h: 1056px;
+    --margin-x: 72px;
+    --margin-top: 64px;
+    --margin-bottom: 56px;
+    --content-w: calc(var(--page-w) - var(--margin-x) * 2);
+  }
+
+  body {
+    background: #2D3748;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    font-family: var(--font-body);
+  }
+
+  .page-label {
+    font-family: var(--font-heading);
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: -24px;
+  }
+
+  /* ═══════════════════════════════════════
+     PAGE CONTAINER
+     ═══════════════════════════════════════ */
+
+  .page {
+    width: var(--page-w);
+    min-height: var(--page-h);
+    background: var(--white);
+    padding: var(--margin-top) var(--margin-x) var(--margin-bottom);
+    position: relative;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+  }
+
+  /* Running header */
+  .page-header {
+    position: absolute;
+    top: 28px;
+    left: var(--margin-x);
+    right: var(--margin-x);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-heading);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .page-header .part-name {
+    font-weight: 600;
+  }
+
+  /* Page number */
+  .page-number {
+    position: absolute;
+    bottom: 28px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  /* ═══════════════════════════════════════
+     CHAPTER OPENER (Direction 3 — Isometric)
+     ═══════════════════════════════════════ */
+
+  .chapter-opener {
+    width: var(--page-w);
+    height: var(--page-h);
+    background: var(--ink-deep);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chapter-opener::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 1;
+  }
+
+  .chapter-opener-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 56px 64px;
+  }
+
+  .chapter-number {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 20px;
+  }
+
+  .chapter-title {
+    font-family: var(--font-heading);
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.15;
+    letter-spacing: -1px;
+    max-width: 500px;
+    margin-bottom: 20px;
+  }
+
+  .chapter-subtitle {
+    font-family: var(--font-body);
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 460px;
+    margin-bottom: auto;
+  }
+
+  /* Illustration area for chapter opener */
+  .chapter-illustration {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 420px;
+    height: 400px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .chapter-illustration img {
+    width: 380px;
+    height: auto;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    margin-right: 40px;
+    object-fit: contain;
+    filter: brightness(1.05);
+  }
+
+  /* Glow effects for chapter */
+  .chapter-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    z-index: 0;
+  }
+  .chapter-glow.tl { top: -100px; left: -60px; background: radial-gradient(circle, rgba(85,60,154,0.12) 0%, transparent 70%); }
+  .chapter-glow.br { bottom: -60px; right: -60px; background: radial-gradient(circle, rgba(9,135,160,0.15) 0%, transparent 70%); }
+
+  /* Chapter contents list */
+  .chapter-contents {
+    list-style: none;
+    padding: 0;
+    margin-top: 28px;
+  }
+
+  .chapter-contents li {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .chapter-contents li .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--teal);
+    flex-shrink: 0;
+  }
+
+  /* ═══════════════════════════════════════
+     TYPOGRAPHY — Body pages
+     ═══════════════════════════════════════ */
+
+  h2 {
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.5px;
+    margin: 36px 0 16px;
+    line-height: 1.25;
+  }
+
+  h2:first-child { margin-top: 12px; }
+
+  h3 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 28px 0 10px;
+    line-height: 1.35;
+  }
+
+  p {
+    font-family: var(--font-body);
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+
+  strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ═══════════════════════════════════════
+     CALLOUT BOXES — Direction 1 (accent bar cards)
+     All 8 types from the manuscript
+     ═══════════════════════════════════════ */
+
+  .callout {
+    border-radius: 8px;
+    padding: 20px 24px 20px 20px;
+    margin: 24px 0;
+    position: relative;
+    border-left: 4px solid;
+    display: flex;
+    gap: 14px;
+  }
+
+  .callout-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .callout-body {
+    flex: 1;
+  }
+
+  .callout-title {
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+
+  .callout-text {
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--text);
+    margin: 0;
+  }
+
+  /* Type: Learned the hard way */
+  .callout.hardway     { background: var(--purple-bg); border-color: var(--purple); }
+  .callout.hardway .callout-title { color: var(--purple); }
+
+  /* Type: Save yourself 45 min */
+  .callout.timesaver   { background: var(--amber-bg); border-color: var(--amber); }
+  .callout.timesaver .callout-title { color: var(--amber); }
+
+  /* Type: This will break things */
+  .callout.danger      { background: var(--red-bg); border-color: var(--red); }
+  .callout.danger .callout-title { color: var(--red); }
+
+  /* Type: Reality check */
+  .callout.reality     { background: var(--green-bg); border-color: var(--green); }
+  .callout.reality .callout-title { color: var(--green); }
+
+  /* Type: Worth knowing */
+  .callout.worth       { background: var(--blue-bg); border-color: var(--blue); }
+  .callout.worth .callout-title { color: var(--blue); }
+
+  /* Type: Do not skip */
+  .callout.dontskip    { background: var(--teal-bg); border-color: var(--teal); }
+  .callout.dontskip .callout-title { color: var(--teal); }
+
+  /* Type: Jargon buster */
+  .callout.jargon      { background: var(--blue-bg); border-color: var(--blue); }
+  .callout.jargon .callout-title { color: var(--blue); }
+
+  /* Type: Copy this exactly */
+  .callout.copyexact   { background: var(--green-bg); border-color: var(--green); }
+  .callout.copyexact .callout-title { color: var(--green); }
+
+  /* ═══════════════════════════════════════
+     CODE BLOCKS
+     ═══════════════════════════════════════ */
+
+  .code-block {
+    background: var(--ink);
+    border-radius: 10px;
+    margin: 20px 0;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+
+  .code-titlebar {
+    background: var(--ink-deep);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .code-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .code-dot.red    { background: #FF5F57; }
+  .code-dot.yellow { background: #FEBC2E; }
+  .code-dot.green  { background: #28C840; }
+
+  .code-titlebar .label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    margin-left: auto;
+    letter-spacing: 0.3px;
+  }
+
+  .code-content {
+    padding: 20px 24px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: #E2E8F0;
+    white-space: pre-wrap;
+    overflow-x: auto;
+  }
+
+  .code-content .comment { color: #718096; }
+  .code-content .string  { color: #68D391; }
+  .code-content .keyword { color: #B794F4; }
+  .code-content .flag    { color: #63B3ED; }
+
+  /* ═══════════════════════════════════════
+     TABLES
+     ═══════════════════════════════════════ */
+
+  .data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 20px 0;
+    font-size: 13px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  .data-table thead th {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 11.5px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    background: var(--bg);
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 2px solid var(--rule-light);
+  }
+
+  .data-table tbody td {
+    font-family: var(--font-body);
+    padding: 13px 18px;
+    color: var(--text);
+    border-bottom: 1px solid var(--rule-light);
+    line-height: 1.5;
+    vertical-align: top;
+  }
+
+  .data-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .data-table tbody tr:nth-child(even) {
+    background: rgba(247, 250, 252, 0.5);
+  }
+
+  .data-table .tag {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  .tag.cowork { background: var(--teal-bg); color: var(--teal); }
+  .tag.desktop { background: var(--purple-bg); color: var(--purple); }
+
+  /* ═══════════════════════════════════════
+     SECTION DIVIDER (Direction 3)
+     ═══════════════════════════════════════ */
+
+  .section-rule {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 36px 0;
+  }
+
+  .section-rule .line {
+    flex: 1;
+    height: 1px;
+    background: var(--rule-light);
+  }
+
+  .section-rule .diamond {
+    width: 6px;
+    height: 6px;
+    background: var(--teal);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  /* ═══════════════════════════════════════
+     INLINE CODE
+     ═══════════════════════════════════════ */
+
+  code {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    background: var(--bg);
+    padding: 2px 7px;
+    border-radius: 4px;
+    color: var(--ink);
+    border: 1px solid var(--rule-light);
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     SAMPLE 1: CHAPTER OPENER (Direction 3 style)
+     ═══════════════════════════════════════════════════ -->
+
+<span class="page-label">Chapter Opener — Part 4</span>
+
+<div class="chapter-opener">
+  <div class="chapter-glow tl"></div>
+  <div class="chapter-glow br"></div>
+
+  <div class="chapter-opener-content">
+    <div class="chapter-number">Part Four</div>
+    <h1 class="chapter-title">Talking to Claude<br>So It Actually Gets It</h1>
+    <p class="chapter-subtitle">
+      The difference between a frustrating 45 minutes and a working prototype in 10 isn't the tool. It's how you ask.
+    </p>
+
+    <ul class="chapter-contents">
+      <li><span class="dot"></span> Bad ask vs. good ask (with examples)</li>
+      <li><span class="dot"></span> Five rules for good prompts</li>
+      <li><span class="dot"></span> How to give feedback mid-project</li>
+      <li><span class="dot"></span> The loop problem and how to fix it</li>
+    </ul>
+  </div>
+
+  <div class="chapter-illustration">
+    <img src="../outputs/illustrations/chapter_part4_prompting.png" alt="Person talking to AI">
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     SAMPLE 2: BODY PAGE (Direction 1 style)
+     Content from Part 4 of the manuscript
+     ═══════════════════════════════════════════════════ -->
+
+<span class="page-label">Body Page — Part 4, continued</span>
+
+<div class="page">
+  <div class="page-header">
+    <span class="part-name">Part 4 — Talking to Claude</span>
+    <span>Claude Code Field Manual</span>
+  </div>
+
+  <h2>The five rules for prompting</h2>
+
+  <p>You don't need to learn "prompt engineering." You need to communicate clearly. If you can write a decent email to a contractor, you can prompt Claude. Here are the five rules:</p>
+
+  <h3>1. Start with what you want, not how to build it</h3>
+
+  <p>You're the client, not the architect. Describe the outcome. "I need a landing page for our webinar" beats "Create an HTML file with a hero section using flexbox."</p>
+
+  <h3>2. Include the context Claude can't guess</h3>
+
+  <p>Claude doesn't know your company, your brand colors, your audience, or your deadline. Include anything that would affect the result:</p>
+
+  <!-- CALLOUT: Worth Knowing -->
+  <div class="callout worth">
+    <span class="callout-icon">💡</span>
+    <div class="callout-body">
+      <div class="callout-title">Worth Knowing</div>
+      <p class="callout-text">Claude remembers everything in the current session but starts fresh each time you open a new one. If you have brand guidelines, product descriptions, or style preferences — paste them in at the start of every session. Yes, every time.</p>
+    </div>
+  </div>
+
+  <h3>3. Be specific about the output</h3>
+
+  <p>Vague: "Make it look good." Specific: "Use our brand colors. No more than three sections. Include a call-to-action button above the fold."</p>
+
+  <h3>4. Say what you DON'T want</h3>
+
+  <p>Claude is enthusiastic. Left unsupervised, it will add features you didn't ask for. If you want something simple, say so: "Keep this minimal. No extra features beyond what I described."</p>
+
+  <h3>5. Ask for a plan before execution</h3>
+
+  <p>Always start with: "Before building anything, explain your plan." Review the plan. Adjust. Then give the green light. This alone prevents most bad outcomes.</p>
+
+  <!-- CALLOUT: Save Yourself 45 Minutes -->
+  <div class="callout timesaver">
+    <span class="callout-icon">⏱️</span>
+    <div class="callout-body">
+      <div class="callout-title">Save Yourself 45 Minutes</div>
+      <p class="callout-text">Keep a document with prompts that worked well. When you find a phrasing that gets great results, save it. You'll reuse it. Here's a starter template you can customize:</p>
+    </div>
+  </div>
+
+  <!-- CODE BLOCK: Prompt template -->
+  <div class="code-block">
+    <div class="code-titlebar">
+      <span class="code-dot red"></span>
+      <span class="code-dot yellow"></span>
+      <span class="code-dot green"></span>
+      <span class="label">prompt-template.txt</span>
+    </div>
+    <div class="code-content"><span class="string">"I need [what you're building].</span>
+<span class="string"> The audience is [who will use it].</span>
+<span class="string"> The goal is [what it should accomplish].</span>
+<span class="string"> It needs to include: [specific features].</span>
+<span class="string"> Style: [describe the look and feel].</span>
+<span class="string"> Brand colors: [hex codes if you have them].</span>
+<span class="string"> Do NOT: [things you want to avoid].</span>
+<span class="string"> Before building, explain your plan step by step."</span></div>
+  </div>
+
+  <div class="page-number">24</div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     SAMPLE 3: BODY PAGE — Tables + More Callout Types
+     ═══════════════════════════════════════════════════ -->
+
+<span class="page-label">Body Page — Tables + callout variety</span>
+
+<div class="page">
+  <div class="page-header">
+    <span class="part-name">Part 4 — Talking to Claude</span>
+    <span>Claude Code Field Manual</span>
+  </div>
+
+  <h2>How to give feedback mid-project</h2>
+
+  <p>Claude built something. It's close but not right. Here's how to get it there:</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 40%;">Instead of this</th>
+        <th style="width: 60%;">Say this</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>"This isn't right"</td>
+        <td>"The headline is too small and the button should be blue, not gray"</td>
+      </tr>
+      <tr>
+        <td>"Make it better"</td>
+        <td>"The spacing between sections feels cramped. Add more white space"</td>
+      </tr>
+      <tr>
+        <td>"I don't like it"</td>
+        <td>"The overall style is too playful. Make it more corporate and minimal"</td>
+      </tr>
+      <tr>
+        <td>"Fix it"</td>
+        <td>"The registration link goes to the wrong URL. It should go to eventbrite.com/our-event"</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Be specific. Point to the exact thing. Describe the exact change. Claude responds to precision the way a dog responds to a thrown ball.</p>
+
+  <div class="section-rule">
+    <span class="line"></span>
+    <span class="diamond"></span>
+    <span class="line"></span>
+  </div>
+
+  <h2>When Claude is stuck (the loop problem)</h2>
+
+  <p>Sometimes Claude tries to fix something, fails, tries again slightly differently, fails again, and keeps going in circles. You'll know it's happening when you see the same error three times.</p>
+
+  <p>When this happens:</p>
+  <p>Click the <strong>Stop</strong> button (or press Escape).</p>
+  <p>Type: "Stop. The approach you're taking isn't working. Let's try something completely different."</p>
+  <p>Describe the problem from scratch. Don't say "try again." Give it new information.</p>
+
+  <!-- CALLOUT: Reality Check -->
+  <div class="callout reality">
+    <span class="callout-icon">🤨</span>
+    <div class="callout-body">
+      <div class="callout-title">Reality Check</div>
+      <p class="callout-text">"Try again" is the most useless thing you can tell Claude. It will do the same wrong thing with slightly different words. Interrupt, redirect, reframe. That's the pattern.</p>
+    </div>
+  </div>
+
+  <!-- CALLOUT: This Will Break Things -->
+  <div class="callout danger">
+    <span class="callout-icon">🔥</span>
+    <div class="callout-body">
+      <div class="callout-title">This Will Break Things</div>
+      <p class="callout-text">Never switch to Act mode unless you understand what your project contains and you're okay with Claude making changes without asking. Act mode is for experienced users who have set up proper safeguards. If you're reading this guide, you're not there yet. That's okay.</p>
+    </div>
+  </div>
+
+  <!-- CALLOUT: I Learned This The Hard Way -->
+  <div class="callout hardway">
+    <span class="callout-icon">💀</span>
+    <div class="callout-body">
+      <div class="callout-title">I Learned This The Hard Way</div>
+      <p class="callout-text">The first time I used Act mode, Claude helpfully reorganized my entire project folder structure "for clarity." It took an hour to undo. Start with Plan mode. Always.</p>
+    </div>
+  </div>
+
+  <!-- CALLOUT: Do Not Skip This -->
+  <div class="callout dontskip">
+    <span class="callout-icon">🚨</span>
+    <div class="callout-body">
+      <div class="callout-title">Do Not Skip This</div>
+      <p class="callout-text">Rewind only undoes file changes on your computer. If Claude did something "out in the world" (sent an email, published a website, called an external service), rewind cannot take that back.</p>
+    </div>
+  </div>
+
+  <!-- CALLOUT: Copy This Exactly -->
+  <div class="callout copyexact">
+    <span class="callout-icon">📋</span>
+    <div class="callout-body">
+      <div class="callout-title">Copy This Exactly</div>
+      <p class="callout-text">"Create a .claudeignore file in my project folder that blocks access to any file starting with .env, any folder called secrets/, and any file ending in .key"</p>
+    </div>
+  </div>
+
+  <!-- CALLOUT: Jargon Buster -->
+  <div class="callout jargon">
+    <span class="callout-icon">💬</span>
+    <div class="callout-body">
+      <div class="callout-title">Jargon Buster</div>
+      <p class="callout-text"><strong>Diff view</strong> — A display that shows what changed in a file. Green lines were added. Red lines were removed. Claude shows this after every code change so you can verify what happened.</p>
+    </div>
+  </div>
+
+  <div class="page-number">25</div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     SAMPLE 4: PLAYBOOK PAGE (Project spread)
+     ═══════════════════════════════════════════════════ -->
+
+<span class="page-label">Playbook Page — Project 01</span>
+
+<div class="page">
+  <div class="page-header">
+    <span class="part-name">Projects — The Playbooks</span>
+    <span>Claude Code Field Manual</span>
+  </div>
+
+  <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 4px; margin-top: 12px;">
+    <span style="font-family: var(--font-heading); font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal);">Project 01</span>
+    <span style="font-family: var(--font-heading); font-size: 12px; color: var(--amber);">⭐⭐</span>
+  </div>
+
+  <h2 style="margin-top: 8px;">Turn a Spreadsheet into a Real Dashboard</h2>
+
+  <p style="color: var(--text-light); font-style: italic; margin-bottom: 24px;">Your boss wants a dashboard. You have the data in Excel. Let's skip the six-week dev request.</p>
+
+  <table class="data-table" style="margin-bottom: 24px;">
+    <thead>
+      <tr>
+        <th style="width: 25%;">Detail</th>
+        <th>Info</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Who</strong></td>
+        <td>Marketing ops, sales ops, CS leads, anyone reporting metrics</td>
+      </tr>
+      <tr>
+        <td><strong>What you get</strong></td>
+        <td>A live dashboard with charts and filters that opens in any browser</td>
+      </tr>
+      <tr>
+        <td><strong>Tool</strong></td>
+        <td><span class="tag desktop">Claude Code Desktop</span></td>
+      </tr>
+      <tr>
+        <td><strong>Time</strong></td>
+        <td>30–60 minutes including back-and-forth on styling</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>First prompt (copy this):</h3>
+
+  <div class="callout copyexact">
+    <span class="callout-icon">📋</span>
+    <div class="callout-body">
+      <div class="callout-title">Copy This Exactly</div>
+      <p class="callout-text">I have a spreadsheet with our monthly sales data. I want to turn it into a dashboard with: a bar chart showing revenue by month, a line chart showing deal count trend, a dropdown to filter by region, and a summary row at the top showing total revenue, average deal size, and number of deals. I have zero coding experience. Walk me through the plan before building anything.</p>
+    </div>
+  </div>
+
+  <h3>What happens next</h3>
+
+  <p>Claude will ask you to share the spreadsheet (drag it in or attach it). It will look at the columns and data types, then propose a plan. Review the plan. Say "Go." Claude builds it. You get a link to preview it on your computer.</p>
+
+  <div class="callout worth">
+    <span class="callout-icon">💡</span>
+    <div class="callout-body">
+      <div class="callout-title">Worth Knowing</div>
+      <p class="callout-text">Column names matter. If your spreadsheet has a column called "Rev" and you said "revenue" in your prompt, Claude might get confused. Use the exact column names from your file.</p>
+    </div>
+  </div>
+
+  <p><strong>To put it online:</strong> Ask Claude: "How do I deploy this so my team can access it?" It will walk you through Vercel (free) or a similar service.</p>
+
+  <div class="page-number">34</div>
+</div>
+
+</body>
+</html>

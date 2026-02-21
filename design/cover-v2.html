@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Claude Code Field Manual — Cover v2</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --ink-deep: #0F1520;
+    --white: #FFFFFF;
+    --teal: #0987A0;
+    --muted: #A0AEC0;
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Lora', Georgia, serif;
+  }
+
+  body { background: #2D3748; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 40px; }
+
+  .cover {
+    width: 816px;
+    height: 1056px;
+    background: var(--ink-deep);
+    position: relative;
+    overflow: hidden;
+    font-family: var(--font-heading);
+  }
+
+  /* ── Background illustration — blown up, ghosted, atmospheric ── */
+  .cover-bg-illust {
+    position: absolute;
+    bottom: -80px;
+    right: -120px;
+    width: 900px;
+    height: 900px;
+    z-index: 0;
+    opacity: 0.08;
+    filter: blur(1.5px) saturate(0.4);
+    pointer-events: none;
+  }
+  .cover-bg-illust img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+  }
+  /* Radial fade so illustration dissolves toward center */
+  .cover-bg-illust::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 70%, transparent 15%, var(--ink-deep) 70%);
+    z-index: 1;
+  }
+
+  /* Grid texture */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 1;
+  }
+
+  /* ── Corner bracket frame ── */
+  .corner {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    z-index: 5;
+  }
+  .corner::before, .corner::after {
+    content: '';
+    position: absolute;
+    background: var(--teal);
+    opacity: 0.4;
+  }
+  .corner.tl { top: 40px; left: 40px; }
+  .corner.tl::before { top: 0; left: 0; width: 48px; height: 2px; }
+  .corner.tl::after  { top: 0; left: 0; width: 2px; height: 48px; }
+  .corner.tr { top: 40px; right: 40px; }
+  .corner.tr::before { top: 0; right: 0; width: 48px; height: 2px; }
+  .corner.tr::after  { top: 0; right: 0; width: 2px; height: 48px; }
+  .corner.bl { bottom: 40px; left: 40px; }
+  .corner.bl::before { bottom: 0; left: 0; width: 48px; height: 2px; }
+  .corner.bl::after  { bottom: 0; left: 0; width: 2px; height: 48px; }
+  .corner.br { bottom: 40px; right: 40px; }
+  .corner.br::before { bottom: 0; right: 0; width: 48px; height: 2px; }
+  .corner.br::after  { bottom: 0; right: 0; width: 2px; height: 48px; }
+
+  /* Ambient glows */
+  .glow { position: absolute; border-radius: 50%; z-index: 1; pointer-events: none; }
+  .glow.a { top: -80px; right: -40px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(9,135,160,0.10) 0%, transparent 70%); }
+  .glow.b { bottom: 120px; left: -80px; width: 350px; height: 350px; background: radial-gradient(circle, rgba(85,60,154,0.08) 0%, transparent 70%); }
+
+  .cover-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 72px 72px;
+  }
+
+  .edition-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 56px;
+    opacity: 0.7;
+  }
+
+  .cover-title {
+    font-size: 62px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.02;
+    letter-spacing: -3px;
+    margin-bottom: 32px;
+  }
+  .cover-title .teal { color: var(--teal); }
+
+  .cover-subtitle {
+    font-family: var(--font-body);
+    font-size: 16.5px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.40);
+    line-height: 1.65;
+    max-width: 420px;
+    margin-bottom: 48px;
+  }
+
+  .cover-rule {
+    width: 48px;
+    height: 2.5px;
+    background: var(--teal);
+    border-radius: 2px;
+    margin-bottom: 24px;
+    opacity: 0.6;
+  }
+
+  .cover-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.30);
+    letter-spacing: 0.3px;
+  }
+  .cover-meta .sep { width: 1px; height: 12px; background: rgba(255,255,255,0.12); }
+  .cover-meta .author { color: rgba(255,255,255,0.50); font-weight: 600; }
+
+  /* ── Decorative bottom edge — cropped illustration strip with heavy masking ── */
+  .cover-strip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 220px;
+    z-index: 2;
+    overflow: hidden;
+  }
+  .cover-strip img {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130%;
+    max-width: none;
+    height: auto;
+    opacity: 0.22;
+    filter: saturate(0.5);
+  }
+  /* Top dissolve */
+  .cover-strip::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--ink-deep) 0%, transparent 100%);
+    z-index: 1;
+  }
+  /* Side dissolves */
+  .cover-strip::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to right, var(--ink-deep) 0%, transparent 20%, transparent 80%, var(--ink-deep) 100%);
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
+  <div class="glow a"></div>
+  <div class="glow b"></div>
+
+  <!-- Background illustration — ghosted atmospheric texture -->
+  <div class="cover-bg-illust">
+    <img src="../outputs/illustrations/cover_hero_wide.png" alt="">
+  </div>
+
+  <!-- Bottom edge strip — cropped, faded, partial -->
+  <div class="cover-strip">
+    <img src="../outputs/illustrations/cover_hero_wide.png" alt="">
+  </div>
+
+  <div class="cover-content">
+    <div class="edition-tag">February 2026 Edition</div>
+
+    <h1 class="cover-title">
+      The<br><span class="teal">Claude Code</span><br>Field Manual
+    </h1>
+
+    <p class="cover-subtitle">
+      A practical guide for non-developers who want to build real things — dashboards, websites, automations — without writing code or waiting for IT.
+    </p>
+
+    <div class="cover-rule"></div>
+
+    <div class="cover-meta">
+      <span class="author">Ofir Bloch</span>
+      <span class="sep"></span>
+      <span>10 Project Playbooks</span>
+      <span class="sep"></span>
+      <span>Zero Code Required</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
