@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>The Claude Code Field Manual — Complete Book</title>
+<title>Ofir's Claude Code Field Manual — Complete Book</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -208,15 +208,15 @@
 
   /* ═══════ BODY PAGE ═══════ */
   .page {
-    width: 816px; min-height: 1056px; background: var(--white);
+    width: 816px; height: 1056px; background: var(--white);
     padding: 64px 72px 56px; position: relative;
-    page-break-after: always;
+    page-break-after: always; overflow: hidden;
   }
   @media screen { .page { box-shadow: 0 4px 32px rgba(0,0,0,0.3); } }
   .page-header {
     position: absolute; top: 28px; left: 72px; right: 72px;
     display: flex; justify-content: space-between;
-    font: 500 11px/1 var(--font-heading); letter-spacing: 1.5px;
+    font: 500 10px/1 var(--font-heading); letter-spacing: 1.5px;
     text-transform: uppercase; color: var(--muted);
   }
   .page-num {
@@ -248,7 +248,7 @@
   /* ═══════ TYPOGRAPHY ═══════ */
   h2 { font: 800 24px/1.25 var(--font-heading); color: var(--ink); letter-spacing: -0.5px; margin: 32px 0 20px; }
   h2:first-child { margin-top: 8px; }
-  h3 { font: 600 18px/1.35 var(--font-heading); color: var(--teal); margin: 24px 0 12px; }
+  h3 { font: 700 17px/1.35 var(--font-heading); color: var(--teal); margin: 24px 0 12px; }
   p { font: 400 14px/1.75 var(--font-body); color: var(--text); margin-bottom: 16px; max-width: 560px; }
   .callout p, .callout .callout-text { max-width: none; }
   strong { font-weight: 600; color: var(--ink); }
@@ -350,7 +350,7 @@
   <div class="cover-strip"><img src="../outputs/illustrations/cover_hero_wide.png" alt=""></div>
   <div class="cover-content">
     <div class="edition-tag">February 2026 Edition</div>
-    <h1 class="cover-title"><span class="the">The</span><br><span class="teal">Claude Code</span><br>Field Manual</h1>
+    <h1 class="cover-title"><span class="the">Ofir's</span><br><span class="teal">Claude Code</span><br>Field Manual</h1>
     <p class="cover-subtitle">A practical guide for non-developers who want to build real things — dashboards, websites, automations — without writing code or waiting for IT.</p>
     <div class="cover-rule"></div>
     <div class="cover-meta">
@@ -412,24 +412,24 @@
     <div class="toc-item"><span class="toc-num">01</span><span class="toc-title">What Is This Thing?</span><span class="toc-page">1</span></div>
     <div class="toc-item"><span class="toc-num">02</span><span class="toc-title">Start Here: Cowork</span><span class="toc-page">4</span></div>
     <div class="toc-item"><span class="toc-num">03</span><span class="toc-title">Level Up: Claude Code Desktop</span><span class="toc-page">7</span></div>
-    <div class="toc-item"><span class="toc-num">04</span><span class="toc-title">Talking to Claude So It Actually Gets It</span><span class="toc-page">12</span></div>
-    <div class="toc-item"><span class="toc-num">05</span><span class="toc-title">The Safety Stuff</span><span class="toc-page">16</span></div>
+    <div class="toc-item"><span class="toc-num">04</span><span class="toc-title">Talking to Claude So It Actually Gets It</span><span class="toc-page">14</span></div>
+    <div class="toc-item"><span class="toc-num">05</span><span class="toc-title">The Safety Stuff</span><span class="toc-page">21</span></div>
 
     <div style="margin: 24px 0 12px; font: 600 11px/1 var(--font-heading); letter-spacing: 2px; text-transform: uppercase; color: var(--teal); opacity: 0.6;">The Playbooks</div>
 
-    <div class="toc-sub"><span>01 &mdash; Spreadsheet to Dashboard &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span></span></span><span class="toc-page">18</span></div>
-    <div class="toc-sub"><span>02 &mdash; Marketing Website &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span></span></span><span class="toc-page">20</span></div>
-    <div class="toc-sub"><span>03 &mdash; Monday Morning Report &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip"></span><span class="pip"></span></span></span><span class="toc-page">21</span></div>
-    <div class="toc-sub"><span>04 &mdash; Competitive Intel Tracker &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip"></span><span class="pip"></span></span></span><span class="toc-page">22</span></div>
-    <div class="toc-sub"><span>05 &mdash; Customer FAQ Bot &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span></span></span><span class="toc-page">23</span></div>
-    <div class="toc-sub"><span>06 &mdash; Event Landing Page &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span></span></span><span class="toc-page">24</span></div>
-    <div class="toc-sub"><span>07 &mdash; Team Wiki &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span></span></span><span class="toc-page">25</span></div>
-    <div class="toc-sub"><span>08 &mdash; Lead Scoring &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span></span></span><span class="toc-page">26</span></div>
-    <div class="toc-sub"><span>09 &mdash; Finance Tracker &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span></span></span><span class="toc-page">27</span></div>
-    <div class="toc-sub"><span>10 &mdash; Email Campaign &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip"></span><span class="pip"></span></span></span><span class="toc-page">28</span></div>
+    <div class="toc-sub"><span>01 &mdash; Spreadsheet to Dashboard &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span></span></span><span class="toc-page">23</span></div>
+    <div class="toc-sub"><span>02 &mdash; Marketing Website &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span></span></span><span class="toc-page">25</span></div>
+    <div class="toc-sub"><span>03 &mdash; Monday Morning Report &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip"></span><span class="pip"></span></span></span><span class="toc-page">26</span></div>
+    <div class="toc-sub"><span>04 &mdash; Competitive Intel Tracker &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip"></span><span class="pip"></span></span></span><span class="toc-page">27</span></div>
+    <div class="toc-sub"><span>05 &mdash; Customer FAQ Bot &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span></span></span><span class="toc-page">28</span></div>
+    <div class="toc-sub"><span>06 &mdash; Event Landing Page &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span></span></span><span class="toc-page">29</span></div>
+    <div class="toc-sub"><span>07 &mdash; Team Wiki &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span></span></span><span class="toc-page">30</span></div>
+    <div class="toc-sub"><span>08 &mdash; Lead Scoring &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span></span></span><span class="toc-page">31</span></div>
+    <div class="toc-sub"><span>09 &mdash; Finance Tracker &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span></span></span><span class="toc-page">32</span></div>
+    <div class="toc-sub"><span>10 &mdash; Email Campaign &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip"></span><span class="pip"></span></span></span><span class="toc-page">33</span></div>
 
-    <div class="toc-item" style="margin-top: 16px;"><span class="toc-num">06</span><span class="toc-title">When Things Go Wrong</span><span class="toc-page">30</span></div>
-    <div class="toc-item"><span class="toc-num">&bull;</span><span class="toc-title">Appendix: Quick Reference &amp; Glossary</span><span class="toc-page">33</span></div>
+    <div class="toc-item" style="margin-top: 16px;"><span class="toc-num">06</span><span class="toc-title">When Things Go Wrong</span><span class="toc-page">35</span></div>
+    <div class="toc-item"><span class="toc-num">&bull;</span><span class="toc-title">Appendix: Quick Reference &amp; Glossary</span><span class="toc-page">38</span></div>
     <div style="position: absolute; bottom: 28px; left: 0; right: 0; text-align: center; font: 500 11px/1 var(--font-heading); color: rgba(255,255,255,0.20);">iii</div>
   </div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
@@ -460,7 +460,7 @@
      PAGE 6: PART 1 BODY
      ═══════════════════════════════════════════════════════════════════ -->
 <div class="page">
-  <div class="page-header"><span>Part 1 — What Is This Thing?</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Part 1 — What Is This Thing?</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <div class="part-kicker">Part 1 — What Is This Thing?</div>
   <h2 style="margin-top: 8px;">The one-paragraph version</h2>
@@ -489,7 +489,7 @@
 
 <!-- Part 1 Body Page 2 -->
 <div class="page">
-  <div class="page-header"><span>Part 1 — What Is This Thing?</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Part 1 — What Is This Thing?</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <h2 style="margin-top: 8px;">Why should a non-developer care?</h2>
   <p>Because the bottleneck in your work has never been ideas. It's been execution. You know exactly what dashboard your team needs. You know the landing page that would convert better. You know the weekly report that should be automated. But every one of those things requires "dev resources." And dev resources are always allocated to something else.</p>
@@ -564,7 +564,7 @@
      PAGES 8-10: PART 2 BODY
      ═══════════════════════════════════════════════════════════════════ -->
 <div class="page">
-  <div class="page-header"><span>Part 2 — Start Here: Cowork</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Part 2 — Start Here: Cowork</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <div class="part-kicker">Part 2 — Start Here: Cowork</div>
   <h2 style="margin-top: 8px;">What Cowork is</h2>
@@ -622,7 +622,7 @@
 </div>
 
 <div class="page">
-  <div class="page-header"><span>Part 2 — Start Here: Cowork</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Part 2 — Start Here: Cowork</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <h2 style="margin-top: 8px;">Ten things Cowork is great at</h2>
   <p>These are real tasks non-developers use Cowork for every day:</p>
@@ -693,7 +693,7 @@
      PAGES 12-16: PART 3 BODY
      ═══════════════════════════════════════════════════════════════════ -->
 <div class="page">
-  <div class="page-header"><span>Part 3 — Claude Code Desktop</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Part 3 — Claude Code Desktop</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <div class="part-kicker">Part 3 — Level Up: Claude Code Desktop</div>
   <h2 style="margin-top: 8px;">What Claude Code Desktop is</h2>
@@ -732,7 +732,7 @@
 </div>
 
 <div class="page">
-  <div class="page-header"><span>Part 3 — Claude Code Desktop</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Part 3 — Claude Code Desktop</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <h2 style="margin-top: 8px;">The three modes</h2>
   <p>Claude Code Desktop has three modes. You switch between them using the dropdown in the chat area.</p>
@@ -752,9 +752,14 @@
     </div>
   </div>
 
-  <div class="divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+  <div class="page-num">8</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
+</div>
 
-  <h2>The permission system (your safety net)</h2>
+<div class="page">
+  <div class="page-header"><span>Part 3 — Claude Code Desktop</span><span>Ofir's Claude Code Field Manual</span></div>
+
+  <h2 style="margin-top: 8px;">The permission system (your safety net)</h2>
   <p>In Code mode, every time Claude wants to create a file, change a file, or run a command, it shows you what it's about to do and asks: allow or deny? You get three choices:</p>
 
   <table class="tbl">
@@ -776,12 +781,12 @@
     </div>
   </div>
 
-  <div class="page-num">8</div>
+  <div class="page-num">9</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <div class="page">
-  <div class="page-header"><span>Part 3 — Claude Code Desktop</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Part 3 — Claude Code Desktop</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <h2 style="margin-top: 8px;">The diff view (seeing what changed)</h2>
   <p>After Claude makes changes, you'll see a "diff" view. This shows you exactly what was added (highlighted in green) and what was removed (highlighted in red). You don't need to understand the code. You're just looking for:</p>
@@ -808,9 +813,14 @@
     </div>
   </div>
 
-  <div class="divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+  <div class="page-num">10</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
+</div>
 
-  <h2>Your first project: a simple landing page</h2>
+<div class="page">
+  <div class="page-header"><span>Part 3 — Claude Code Desktop</span><span>Ofir's Claude Code Field Manual</span></div>
+
+  <h2 style="margin-top: 8px;">Your first project: a simple landing page</h2>
   <p>Let's build something real. A one-page website for a product, event, or team.</p>
   <ol class="step-list">
     <li>Open Claude Code Desktop. Select your empty project folder.</li>
@@ -823,12 +833,12 @@
     <li>When you're happy, say: "How do I put this on the internet so other people can see it?"</li>
   </ol>
 
-  <div class="page-num">9</div>
+  <div class="page-num">11</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <div class="page">
-  <div class="page-header"><span>Part 3 — Claude Code Desktop</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Part 3 — Claude Code Desktop</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <div class="callout copyexact">
     <div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg></div>
@@ -862,7 +872,7 @@
     </div>
   </div>
 
-  <div class="page-num">10</div>
+  <div class="page-num">12</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
@@ -891,7 +901,7 @@
      PAGES 18-21: PART 4 BODY
      ═══════════════════════════════════════════════════════════════════ -->
 <div class="page">
-  <div class="page-header"><span>Part 4 — Talking to Claude</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Part 4 — Talking to Claude</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <div class="part-kicker">Part 4 — Talking to Claude So It Actually Gets It</div>
   <h2 style="margin-top: 8px;">The single most important skill in this guide</h2>
@@ -909,7 +919,14 @@
   </div>
   <p>What kind? For whom? What should it do? What color? Claude will guess. It will guess wrong.</p>
 
-  <h3>The good version</h3>
+  <div class="page-num">14</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
+</div>
+
+<div class="page">
+  <div class="page-header"><span>Part 4 — Talking to Claude</span><span>Ofir's Claude Code Field Manual</span></div>
+
+  <h3 style="margin-top: 8px;">The good version</h3>
   <div class="code-block">
     <div class="code-bar"><span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span><span class="fname">good-prompt.txt</span></div>
     <div class="code-body"><span class="s">"I need a landing page for our Q2 webinar on AI in marketing.
@@ -930,12 +947,12 @@ Before building anything, explain your plan."</span></div>
     </div>
   </div>
 
-  <div class="page-num">12</div>
+  <div class="page-num">15</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <div class="page">
-  <div class="page-header"><span>Part 4 — Talking to Claude</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Part 4 — Talking to Claude</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <h2 style="margin-top: 8px;">The five rules</h2>
 
@@ -970,6 +987,16 @@ Before building anything, explain your plan."</span></div>
     </div>
   </div>
 
+  <div class="page-num">16</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
+</div>
+
+<div class="page">
+  <div class="page-header"><span>Part 4 — Talking to Claude</span><span>Ofir's Claude Code Field Manual</span></div>
+
+  <h3 style="margin-top: 8px;">The prompt template</h3>
+  <p>Use this as a starting point for any request:</p>
+
   <div class="code-block">
     <div class="code-bar"><span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span><span class="fname">prompt-template.txt</span></div>
     <div class="code-body"><span class="s">"I need [what you're building].</span>
@@ -982,12 +1009,12 @@ Before building anything, explain your plan."</span></div>
 <span class="s"> Before building, explain your plan step by step."</span></div>
   </div>
 
-  <div class="page-num">13</div>
+  <div class="page-num">17</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <div class="page">
-  <div class="page-header"><span>Part 4 — Talking to Claude</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Part 4 — Talking to Claude</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <h2 style="margin-top: 8px;">How to give feedback mid-project</h2>
   <p>Claude built something. It's close but not right. Here's how to get it there:</p>
@@ -1012,9 +1039,14 @@ Before building anything, explain your plan."</span></div>
     </div>
   </div>
 
-  <div class="divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+  <div class="page-num">18</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
+</div>
 
-  <h2>When Claude is stuck (the loop problem)</h2>
+<div class="page">
+  <div class="page-header"><span>Part 4 — Talking to Claude</span><span>Ofir's Claude Code Field Manual</span></div>
+
+  <h2 style="margin-top: 8px;">When Claude is stuck (the loop problem)</h2>
   <p>Sometimes Claude tries to fix something, fails, tries again slightly differently, fails again, and keeps going in circles. You'll know it's happening when you see the same error three times.</p>
   <p>When this happens:</p>
   <ol class="step-list">
@@ -1031,7 +1063,7 @@ Before building anything, explain your plan."</span></div>
     </div>
   </div>
 
-  <div class="page-num">14</div>
+  <div class="page-num">19</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
@@ -1060,7 +1092,7 @@ Before building anything, explain your plan."</span></div>
      PAGES 22-23: PART 5 BODY
      ═══════════════════════════════════════════════════════════════════ -->
 <div class="page">
-  <div class="page-header"><span>Part 5 — The Safety Stuff</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Part 5 — The Safety Stuff</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <div class="part-kicker">Part 5 — The Safety Stuff</div>
   <p style="font-style: italic; color: var(--text-light); margin-bottom: 20px;">Claude Code can create files, delete files, and run programs on your computer. That's what makes it powerful. It's also why you need to understand the guardrails.</p>
@@ -1113,7 +1145,7 @@ Before building anything, explain your plan."</span></div>
     <li><strong>If anything feels wrong, hit Stop.</strong> Nothing bad happens when you stop.</li>
   </ol>
 
-  <div class="page-num">16</div>
+  <div class="page-num">21</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
@@ -1145,7 +1177,7 @@ Before building anything, explain your plan."</span></div>
 </div>
 
 <div class="page">
-  <div class="page-header"><span>Projects — The Playbooks</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Projects — The Playbooks</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <div class="part-kicker">Projects 01&#8211;10 — The Playbooks</div>
   <p style="font-style: italic; color: var(--text-light); margin-bottom: 12px;">Each playbook tells you: who this is for, what you'll end up with, the exact first prompt to send Claude, what to watch for, and how long it takes. Follow them in order or jump to whichever one matches your need.</p>
@@ -1188,12 +1220,12 @@ Before building anything, explain your plan."</span></div>
     </div>
   </div>
 
-  <div class="page-num">18</div>
+  <div class="page-num">23</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <div class="page">
-  <div class="page-header"><span>Project 01 — Dashboard</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Project 01 — Dashboard</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <h3>What happens next</h3>
   <p>Claude will ask you to share the spreadsheet (drag it in or attach it). It will look at the columns and data types, then propose a plan. Review the plan. Say "Go." Claude builds it. You get a link to preview it on your computer.</p>
@@ -1208,13 +1240,13 @@ Before building anything, explain your plan."</span></div>
 
   <p><strong>To put it online:</strong> Ask Claude: "How do I deploy this so my team can access it?" It will walk you through Vercel (free) or a similar service.</p>
 
-  <div class="page-num">19</div>
+  <div class="page-num">24</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- PLAYBOOK 02 PAGE -->
 <div class="page">
-  <div class="page-header"><span>Project 02 — Marketing Website</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Project 02 — Marketing Website</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 4px; margin-top: 8px;">
     <span style="font: 700 12px/1 var(--font-heading); letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal);">Project 02</span>
@@ -1254,13 +1286,13 @@ Before building anything, explain your plan."</span></div>
     </div>
   </div>
 
-  <div class="page-num">20</div>
+  <div class="page-num">25</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- PLAYBOOK 03 PAGE -->
 <div class="page">
-  <div class="page-header"><span>Project 03 — Monday Report</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Project 03 — Monday Report</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <!-- PLAYBOOK 03 -->
   <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 4px; margin-top: 8px;">
@@ -1301,13 +1333,13 @@ Before building anything, explain your plan."</span></div>
     </div>
   </div>
 
-  <div class="page-num">21</div>
+  <div class="page-num">26</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- PLAYBOOK 04 PAGE -->
 <div class="page">
-  <div class="page-header"><span>Project 04 — Competitive Intel</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Project 04 — Competitive Intel</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <!-- PLAYBOOK 04 -->
   <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 4px; margin-top: 8px;">
@@ -1348,13 +1380,13 @@ Before building anything, explain your plan."</span></div>
     </div>
   </div>
 
-  <div class="page-num">22</div>
+  <div class="page-num">27</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- PLAYBOOK 05 PAGE -->
 <div class="page">
-  <div class="page-header"><span>Project 05 — FAQ Bot</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Project 05 — FAQ Bot</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <!-- PLAYBOOK 05 -->
   <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 4px; margin-top: 8px;">
@@ -1395,13 +1427,13 @@ Before building anything, explain your plan."</span></div>
     </div>
   </div>
 
-  <div class="page-num">23</div>
+  <div class="page-num">28</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- PLAYBOOK 06 PAGE -->
 <div class="page">
-  <div class="page-header"><span>Project 06 — Event Landing Page</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Project 06 — Event Landing Page</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <!-- PLAYBOOK 06 -->
   <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 4px; margin-top: 8px;">
@@ -1442,13 +1474,13 @@ Before building anything, explain your plan."</span></div>
     </div>
   </div>
 
-  <div class="page-num">24</div>
+  <div class="page-num">29</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- PLAYBOOK 07 PAGE -->
 <div class="page">
-  <div class="page-header"><span>Project 07 — Team Wiki</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Project 07 — Team Wiki</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <!-- PLAYBOOK 07 -->
   <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 4px; margin-top: 8px;">
@@ -1489,13 +1521,13 @@ Before building anything, explain your plan."</span></div>
     </div>
   </div>
 
-  <div class="page-num">25</div>
+  <div class="page-num">30</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- PLAYBOOK 08 PAGE -->
 <div class="page">
-  <div class="page-header"><span>Project 08 — Lead Scoring</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Project 08 — Lead Scoring</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <!-- PLAYBOOK 08 -->
   <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 4px; margin-top: 8px;">
@@ -1536,13 +1568,13 @@ Before building anything, explain your plan."</span></div>
     </div>
   </div>
 
-  <div class="page-num">26</div>
+  <div class="page-num">31</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- PLAYBOOK 09 PAGE -->
 <div class="page">
-  <div class="page-header"><span>Project 09 — Finance Tracker</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Project 09 — Finance Tracker</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <!-- PLAYBOOK 09 -->
   <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 4px; margin-top: 8px;">
@@ -1583,13 +1615,13 @@ Before building anything, explain your plan."</span></div>
     </div>
   </div>
 
-  <div class="page-num">27</div>
+  <div class="page-num">32</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- PLAYBOOK 10 PAGE -->
 <div class="page">
-  <div class="page-header"><span>Project 10 — Email Campaign</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Project 10 — Email Campaign</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <!-- PLAYBOOK 10 -->
   <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 4px; margin-top: 8px;">
@@ -1630,7 +1662,7 @@ Before building anything, explain your plan."</span></div>
     </div>
   </div>
 
-  <div class="page-num">28</div>
+  <div class="page-num">33</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
@@ -1660,7 +1692,7 @@ Before building anything, explain your plan."</span></div>
      PART 6 BODY PAGES
      ═══════════════════════════════════════════════════════════════════ -->
 <div class="page">
-  <div class="page-header"><span>Part 6 — When Things Go Wrong</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Part 6 — When Things Go Wrong</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <div class="part-kicker">Part 6 — When Things Go Wrong</div>
   <h2 style="margin-top: 8px;">Claude is making things up</h2>
@@ -1702,12 +1734,12 @@ Before building anything, explain your plan."</span></div>
     <li>If that doesn't work: "Stop the current server, clear any errors, and restart it from scratch."</li>
   </ul>
 
-  <div class="page-num">30</div>
+  <div class="page-num">35</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <div class="page">
-  <div class="page-header"><span>Part 6 — When Things Go Wrong</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Part 6 — When Things Go Wrong</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <h2 style="margin-top: 8px;">You're lost and don't know what happened</h2>
   <p>The project has files everywhere. You're not sure what's working and what's broken.</p>
@@ -1750,7 +1782,7 @@ Before building anything, explain your plan."</span></div>
     </div>
   </div>
 
-  <div class="page-num">31</div>
+  <div class="page-num">36</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
@@ -1780,7 +1812,7 @@ Before building anything, explain your plan."</span></div>
      APPENDIX BODY PAGES
      ═══════════════════════════════════════════════════════════════════ -->
 <div class="page">
-  <div class="page-header"><span>Appendix</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Appendix</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <div class="part-kicker">Appendix — Quick Reference &amp; Glossary</div>
   <h2 style="margin-top: 8px;">Glossary of terms used in this guide</h2>
@@ -1801,12 +1833,12 @@ Before building anything, explain your plan."</span></div>
     </tbody>
   </table>
 
-  <div class="page-num">33</div>
+  <div class="page-num">38</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <div class="page">
-  <div class="page-header"><span>Appendix</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Appendix</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <h2 style="margin-top: 8px;">Copy/paste on your computer</h2>
   <p>You'll copy and paste prompts throughout this guide. Here's how:</p>
@@ -1845,12 +1877,12 @@ Before building anything, explain your plan."</span></div>
     <li><strong>Netlify (free hosting):</strong> netlify.com</li>
   </ul>
 
-  <div class="page-num">34</div>
+  <div class="page-num">39</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <div class="page">
-  <div class="page-header"><span>Appendix</span><span>Claude Code Field Manual</span></div>
+  <div class="page-header"><span>Appendix</span><span>Ofir's Claude Code Field Manual</span></div>
 
   <h2 style="margin-top: 8px;">When to stop and get a developer</h2>
   <p>This guide helps you build a lot. But some things genuinely need a professional developer:</p>
@@ -1875,7 +1907,7 @@ Before building anything, explain your plan."</span></div>
 
   <p style="text-align: center; color: var(--muted); font: 500 13px/1.6 var(--font-heading); margin-top: 48px;">You've reached the end of the guide.<br>Now go build something.</p>
 
-  <div class="page-num">35</div>
+  <div class="page-num">40</div>
   <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
@@ -1888,10 +1920,10 @@ Before building anything, explain your plan."</span></div>
   <div class="glow a"></div><div class="glow b"></div>
   <div class="dark-page-content" style="justify-content: center; align-items: center; text-align: center;">
     <div style="max-width: 480px;">
-      <div style="font: 900 36px/1.1 var(--font-heading); color: var(--white); letter-spacing: -1.5px; margin-bottom: 12px;">The <span style="color: var(--teal);">Claude Code</span><br>Field Manual</div>
+      <div style="font: 900 36px/1.1 var(--font-heading); color: var(--white); letter-spacing: -1.5px; margin-bottom: 12px;">Ofir's <span style="color: var(--teal);">Claude Code</span><br>Field Manual</div>
       <div style="width: 48px; height: 2.5px; background: var(--teal); border-radius: 2px; margin: 24px auto; opacity: 0.6;"></div>
       <p style="font: 400 14px/1.8 var(--font-body); color: rgba(255,255,255,0.35); margin-bottom: 32px;">A practical guide for non-developers who want to build real things — dashboards, websites, automations — without writing code or waiting for IT.</p>
-      <p style="font: 500 12px/1.6 var(--font-heading); color: rgba(255,255,255,0.25); letter-spacing: 0.5px;">Claude Code Field Manual &middot; February 20, 2026</p>
+      <p style="font: 500 12px/1.6 var(--font-heading); color: rgba(255,255,255,0.25); letter-spacing: 0.5px;">Ofir's Claude Code Field Manual &middot; February 2026</p>
       <p style="font: 500 12px/1.6 var(--font-heading); color: rgba(255,255,255,0.25); letter-spacing: 0.5px;">Compiled by Ofir Bloch</p>
       <p style="font: 400 11px/1.6 var(--font-heading); color: rgba(255,255,255,0.15); margin-top: 24px;">&copy; 2026 All rights reserved</p>
     </div>
