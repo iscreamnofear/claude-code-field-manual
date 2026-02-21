@@ -93,7 +93,7 @@
   .cover-rule { width: 48px; height: 2.5px; background: var(--teal); border-radius: 2px; margin-bottom: 24px; opacity: 0.6; }
   .cover-meta {
     display: flex; align-items: center; gap: 16px;
-    font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 0.3px;
+    font-size: 11px; color: rgba(255,255,255,0.50); letter-spacing: 0.3px;
   }
   .cover-meta .sep { width: 1px; height: 12px; background: rgba(255,255,255,0.12); }
   .cover-meta .author { color: rgba(255,255,255,0.65); font-weight: 600; }
@@ -220,14 +220,35 @@
     text-transform: uppercase; color: var(--muted);
   }
   .page-num {
-    position: absolute; bottom: 28px; left: 0; right: 0;
-    text-align: center; font: 500 11px/1 var(--font-heading); color: var(--muted);
+    position: absolute; bottom: 28px; left: 72px;
+    text-align: left; font: 500 11px/1 var(--font-heading); color: var(--muted);
+  }
+  .page-num::before {
+    content: ''; position: absolute; top: -4px; left: -12px;
+    width: 8px; height: 8px;
+    border-top: 1.5px solid var(--teal); border-left: 1.5px solid var(--teal);
+    opacity: 0.15;
+  }
+  .page-num::after {
+    content: ''; position: absolute; bottom: -4px; right: -12px;
+    width: 8px; height: 8px;
+    border-bottom: 1.5px solid var(--teal); border-right: 1.5px solid var(--teal);
+    opacity: 0.15;
+  }
+  .author-foot {
+    position: absolute; bottom: 28px; right: 72px;
+    font: 400 8.5px/1 var(--font-heading); color: var(--muted);
+    letter-spacing: 0.3px; opacity: 0.6;
+  }
+  .author-foot a { color: inherit; text-decoration: none; }
+  .dark-page .author-foot, .ch-opener .author-foot, .cover .author-foot {
+    color: rgba(255,255,255,0.25);
   }
 
   /* ═══════ TYPOGRAPHY ═══════ */
-  h2 { font: 800 24px/1.25 var(--font-heading); color: var(--ink); letter-spacing: -0.5px; margin: 32px 0 16px; }
+  h2 { font: 800 24px/1.25 var(--font-heading); color: var(--ink); letter-spacing: -0.5px; margin: 32px 0 20px; }
   h2:first-child { margin-top: 8px; }
-  h3 { font: 600 18px/1.35 var(--font-heading); color: var(--ink); margin: 24px 0 8px; }
+  h3 { font: 600 18px/1.35 var(--font-heading); color: var(--teal); margin: 24px 0 12px; }
   p { font: 400 14px/1.75 var(--font-body); color: var(--text); margin-bottom: 16px; max-width: 560px; }
   .callout p, .callout .callout-text { max-width: none; }
   strong { font-weight: 600; color: var(--ink); }
@@ -264,7 +285,7 @@
   .callout.worth     { background: var(--blue-bg); border-color: var(--blue); color: var(--blue); }
   .callout.dontskip  { background: var(--teal-bg); border-color: var(--teal); color: var(--teal); }
   .callout.jargon    { background: var(--indigo-bg); border-color: var(--indigo); color: var(--indigo); }
-  .callout.copyexact { background: var(--teal-bg); border-color: var(--teal); color: var(--teal); }
+  .callout.copyexact { background: #F0FFF4; border-color: var(--green); color: var(--green); border-left: 3px dashed var(--green); }
   .callout .callout-title { color: inherit; }
   .callout .callout-icon svg { stroke: currentColor; }
 
@@ -340,6 +361,7 @@
       <span>Zero Code Required</span>
     </div>
   </div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════
@@ -369,24 +391,12 @@
       </div>
     </div>
     <p style="margin-top: auto; font-size: 12px; color: rgba(255,255,255,0.20);">No coding experience required. Seriously.</p>
+    <div style="margin-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 16px;">
+      <p style="font-size: 11px; line-height: 1.7; color: rgba(255,255,255,0.25); margin-bottom: 6px;">This guide is for informational and educational purposes only. The author is not affiliated with Anthropic beyond being a user. All product names and features are based on publicly available information as of February 2026 and may change. Results will vary. The author assumes no liability for outcomes. Do not use AI tools for sensitive data without consulting a developer and legal counsel. &copy; 2026 Ofir Bloch. All rights reserved.</p>
+    </div>
     <div style="position: absolute; bottom: 28px; left: 0; right: 0; text-align: center; font: 500 11px/1 var(--font-heading); color: rgba(255,255,255,0.20);">ii</div>
   </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════════════
-     PAGE 3: LEGAL DISCLAIMER
-     ═══════════════════════════════════════════════════════════════════ -->
-<div class="dark-page">
-  <div class="dark-page-content" style="justify-content: center; align-items: center; text-align: center;">
-    <div style="max-width: 480px;">
-      <div style="font: 600 11px/1 var(--font-heading); letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: 32px; opacity: 0.5;">Legal Disclaimer</div>
-      <p style="font-size: 13px; line-height: 1.8; color: rgba(255,255,255,0.35);">This guide is provided for informational and educational purposes only. The author is not affiliated with Anthropic, the maker of Claude, beyond being a user of their products. All product names, features, and interfaces described herein are based on publicly available information as of February 2026 and may change without notice.</p>
-      <p style="font-size: 13px; line-height: 1.8; color: rgba(255,255,255,0.35);">The projects and playbooks in this guide are examples. Results will vary based on your data, your prompts, and the current capabilities of the tools described. The author assumes no liability for outcomes resulting from following this guide.</p>
-      <p style="font-size: 13px; line-height: 1.8; color: rgba(255,255,255,0.35);">Do not use Claude Code or any AI tool to build systems that handle sensitive data (medical records, financial credentials, personally identifiable information) without consulting a qualified developer and legal counsel.</p>
-      <p style="font-size: 13px; line-height: 1.8; color: rgba(255,255,255,0.25); margin-top: 32px;">&copy; 2026 Ofir Bloch. All rights reserved.</p>
-    </div>
-    <div style="position: absolute; bottom: 28px; left: 0; right: 0; text-align: center; font: 500 11px/1 var(--font-heading); color: rgba(255,255,255,0.20);">iii</div>
-  </div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════
@@ -400,10 +410,10 @@
     <h2 style="color: var(--white); font: 800 32px/1.15 var(--font-heading); letter-spacing: -1px; margin-bottom: 36px;">Table of Contents</h2>
 
     <div class="toc-item"><span class="toc-num">01</span><span class="toc-title">What Is This Thing?</span><span class="toc-page">1</span></div>
-    <div class="toc-item"><span class="toc-num">02</span><span class="toc-title">Start Here: Cowork</span><span class="toc-page">3</span></div>
-    <div class="toc-item"><span class="toc-num">03</span><span class="toc-title">Level Up: Claude Code Desktop</span><span class="toc-page">6</span></div>
-    <div class="toc-item"><span class="toc-num">04</span><span class="toc-title">Talking to Claude So It Actually Gets It</span><span class="toc-page">11</span></div>
-    <div class="toc-item"><span class="toc-num">05</span><span class="toc-title">The Safety Stuff</span><span class="toc-page">15</span></div>
+    <div class="toc-item"><span class="toc-num">02</span><span class="toc-title">Start Here: Cowork</span><span class="toc-page">4</span></div>
+    <div class="toc-item"><span class="toc-num">03</span><span class="toc-title">Level Up: Claude Code Desktop</span><span class="toc-page">7</span></div>
+    <div class="toc-item"><span class="toc-num">04</span><span class="toc-title">Talking to Claude So It Actually Gets It</span><span class="toc-page">12</span></div>
+    <div class="toc-item"><span class="toc-num">05</span><span class="toc-title">The Safety Stuff</span><span class="toc-page">16</span></div>
 
     <div style="margin: 24px 0 12px; font: 600 11px/1 var(--font-heading); letter-spacing: 2px; text-transform: uppercase; color: var(--teal); opacity: 0.6;">The Playbooks</div>
 
@@ -418,10 +428,11 @@
     <div class="toc-sub"><span>09 &mdash; Finance Tracker &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span></span></span><span class="toc-page">27</span></div>
     <div class="toc-sub"><span>10 &mdash; Email Campaign &nbsp;<span class="pips"><span class="pip filled"></span><span class="pip"></span><span class="pip"></span></span></span><span class="toc-page">28</span></div>
 
-    <div class="toc-item" style="margin-top: 16px;"><span class="toc-num">06</span><span class="toc-title">When Things Go Wrong</span><span class="toc-page">29</span></div>
-    <div class="toc-item"><span class="toc-num">&bull;</span><span class="toc-title">Appendix: Quick Reference &amp; Glossary</span><span class="toc-page">32</span></div>
-    <div style="position: absolute; bottom: 28px; left: 0; right: 0; text-align: center; font: 500 11px/1 var(--font-heading); color: rgba(255,255,255,0.20);">iv</div>
+    <div class="toc-item" style="margin-top: 16px;"><span class="toc-num">06</span><span class="toc-title">When Things Go Wrong</span><span class="toc-page">30</span></div>
+    <div class="toc-item"><span class="toc-num">&bull;</span><span class="toc-title">Appendix: Quick Reference &amp; Glossary</span><span class="toc-page">33</span></div>
+    <div style="position: absolute; bottom: 28px; left: 0; right: 0; text-align: center; font: 500 11px/1 var(--font-heading); color: rgba(255,255,255,0.20);">iii</div>
   </div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════
@@ -442,6 +453,7 @@
     </ul>
   </div>
   <div class="ch-illust"><img src="../outputs/illustrations/chapter_part1_whatisit.png" alt=""></div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════
@@ -459,19 +471,27 @@
   <h2>What's the difference between Claude, Cowork, and Claude Code?</h2>
   <p>Think of them as three levels of the same AI:</p>
 
-  <div class="callout jargon">
-    <div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
-    <div class="callout-body">
-      <div class="callout-title">Jargon Buster</div>
-      <p class="callout-text"><strong>Claude chat</strong> is what you're probably already using. <strong>Cowork</strong> is Claude with hands. <strong>Claude Code</strong> is Claude with a workshop.</p>
-    </div>
-  </div>
+  <table class="tbl">
+    <thead><tr><th style="width: 22%;"></th><th style="width: 26%;">Claude Chat</th><th style="width: 26%;">Cowork</th><th style="width: 26%;">Claude Code</th></tr></thead>
+    <tbody>
+      <tr><td><strong>What it is</strong></td><td>AI chatbot</td><td>Claude with hands</td><td>Claude with a workshop</td></tr>
+      <tr><td><strong>What it does</strong></td><td>Answers questions, writes text, analyzes documents</td><td>Creates files, builds spreadsheets, processes data on your computer</td><td>Builds full apps, websites, dashboards, deploys to the internet</td></tr>
+      <tr><td><strong>What it can't do</strong></td><td>Touch your files or build anything</td><td>Put things on the internet or connect to databases</td><td>Nothing major &mdash; this is the full toolkit</td></tr>
+      <tr><td><strong>Who it's for</strong></td><td>Everyone</td><td>Anyone who works with documents and data</td><td>Anyone who wants to build real tools</td></tr>
+    </tbody>
+  </table>
 
   <p>This guide covers Cowork and Claude Code. You'll start with Cowork (easy, low-risk, useful immediately) and graduate to Claude Code (powerful, slightly more involved, life-changing for your team's velocity).</p>
 
-  <div class="divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+  <div class="page-num">1</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
+</div>
 
-  <h2>Why should a non-developer care?</h2>
+<!-- Part 1 Body Page 2 -->
+<div class="page">
+  <div class="page-header"><span>Part 1 — What Is This Thing?</span><span>Claude Code Field Manual</span></div>
+
+  <h2 style="margin-top: 8px;">Why should a non-developer care?</h2>
   <p>Because the bottleneck in your work has never been ideas. It's been execution. You know exactly what dashboard your team needs. You know the landing page that would convert better. You know the weekly report that should be automated. But every one of those things requires "dev resources." And dev resources are always allocated to something else.</p>
   <p>Claude Code changes the math. Not for everything. But for a surprising number of the things that are stuck in someone's backlog, you can now build them yourself. In hours, not sprints.</p>
 
@@ -494,6 +514,18 @@
     <li>No coding experience. No terminal experience. No git experience. None of that.</li>
   </ul>
 
+  <div class="divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+
+  <h2>What you'll learn in this guide</h2>
+  <ul>
+    <li><strong>Part 2</strong> — How to use Cowork for everyday tasks (your comfort zone)</li>
+    <li><strong>Part 3</strong> — How to use Claude Code Desktop to build real projects</li>
+    <li><strong>Part 4</strong> — How to communicate with Claude so it actually delivers</li>
+    <li><strong>Part 5</strong> — The safety guardrails you need to know</li>
+    <li><strong>Playbooks</strong> — 10 step-by-step projects you can build this week</li>
+    <li><strong>Part 6</strong> — What to do when things go wrong</li>
+  </ul>
+
   <div class="callout worth">
     <div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V17a1 1 0 001 1h6a1 1 0 001-1v-2.3A7 7 0 0012 2z"/></svg></div>
     <div class="callout-body">
@@ -503,10 +535,11 @@
   </div>
 
   <div class="page-num">2</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════
-     PAGE 7: PART 2 CHAPTER OPENER
+     PART 2 CHAPTER OPENER
      ═══════════════════════════════════════════════════════════════════ -->
 <div class="ch-opener">
   <div class="ch-corner tl"></div><div class="ch-corner tr"></div>
@@ -524,6 +557,7 @@
     </ul>
   </div>
   <div class="ch-illust"><img src="../outputs/illustrations/chapter_part2_cowork.png" alt=""></div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════
@@ -584,6 +618,7 @@
   </div>
 
   <div class="page-num">4</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <div class="page">
@@ -627,10 +662,11 @@
   </div>
 
   <div class="page-num">5</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════
-     PAGE 11: PART 3 CHAPTER OPENER
+     PART 3 CHAPTER OPENER
      ═══════════════════════════════════════════════════════════════════ -->
 <div class="ch-opener">
   <div class="ch-corner tl"></div><div class="ch-corner tr"></div>
@@ -650,6 +686,7 @@
     </ul>
   </div>
   <div class="ch-illust"><img src="../outputs/illustrations/chapter_part3_desktop.png" alt=""></div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════
@@ -691,6 +728,7 @@
   </div>
 
   <div class="page-num">7</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <div class="page">
@@ -739,6 +777,7 @@
   </div>
 
   <div class="page-num">8</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <div class="page">
@@ -785,6 +824,7 @@
   </ol>
 
   <div class="page-num">9</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <div class="page">
@@ -823,10 +863,11 @@
   </div>
 
   <div class="page-num">10</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════
-     PAGE 17: PART 4 CHAPTER OPENER
+     PART 4 CHAPTER OPENER
      ═══════════════════════════════════════════════════════════════════ -->
 <div class="ch-opener">
   <div class="ch-corner tl"></div><div class="ch-corner tr"></div>
@@ -843,6 +884,7 @@
     </ul>
   </div>
   <div class="ch-illust"><img src="../outputs/illustrations/chapter_part4_prompting.png" alt=""></div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════
@@ -889,6 +931,7 @@ Before building anything, explain your plan."</span></div>
   </div>
 
   <div class="page-num">12</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <div class="page">
@@ -940,6 +983,7 @@ Before building anything, explain your plan."</span></div>
   </div>
 
   <div class="page-num">13</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <div class="page">
@@ -988,6 +1032,7 @@ Before building anything, explain your plan."</span></div>
   </div>
 
   <div class="page-num">14</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════
@@ -1008,6 +1053,7 @@ Before building anything, explain your plan."</span></div>
     </ul>
   </div>
   <div class="ch-illust"><img src="../outputs/illustrations/chapter_part5_safety.png" alt=""></div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════
@@ -1068,6 +1114,7 @@ Before building anything, explain your plan."</span></div>
   </ol>
 
   <div class="page-num">16</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════
@@ -1094,6 +1141,7 @@ Before building anything, explain your plan."</span></div>
     </ul>
   </div>
   <div class="ch-illust"><img src="../outputs/illustrations/chapter_playbooks.png" alt=""></div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <div class="page">
@@ -1141,6 +1189,7 @@ Before building anything, explain your plan."</span></div>
   </div>
 
   <div class="page-num">18</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <div class="page">
@@ -1160,6 +1209,7 @@ Before building anything, explain your plan."</span></div>
   <p><strong>To put it online:</strong> Ask Claude: "How do I deploy this so my team can access it?" It will walk you through Vercel (free) or a similar service.</p>
 
   <div class="page-num">19</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- PLAYBOOK 02 PAGE -->
@@ -1205,6 +1255,7 @@ Before building anything, explain your plan."</span></div>
   </div>
 
   <div class="page-num">20</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- PLAYBOOK 03 PAGE -->
@@ -1251,6 +1302,7 @@ Before building anything, explain your plan."</span></div>
   </div>
 
   <div class="page-num">21</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- PLAYBOOK 04 PAGE -->
@@ -1297,6 +1349,7 @@ Before building anything, explain your plan."</span></div>
   </div>
 
   <div class="page-num">22</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- PLAYBOOK 05 PAGE -->
@@ -1343,6 +1396,7 @@ Before building anything, explain your plan."</span></div>
   </div>
 
   <div class="page-num">23</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- PLAYBOOK 06 PAGE -->
@@ -1389,6 +1443,7 @@ Before building anything, explain your plan."</span></div>
   </div>
 
   <div class="page-num">24</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- PLAYBOOK 07 PAGE -->
@@ -1435,6 +1490,7 @@ Before building anything, explain your plan."</span></div>
   </div>
 
   <div class="page-num">25</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- PLAYBOOK 08 PAGE -->
@@ -1481,6 +1537,7 @@ Before building anything, explain your plan."</span></div>
   </div>
 
   <div class="page-num">26</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- PLAYBOOK 09 PAGE -->
@@ -1527,6 +1584,7 @@ Before building anything, explain your plan."</span></div>
   </div>
 
   <div class="page-num">27</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- PLAYBOOK 10 PAGE -->
@@ -1573,6 +1631,7 @@ Before building anything, explain your plan."</span></div>
   </div>
 
   <div class="page-num">28</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════
@@ -1594,6 +1653,7 @@ Before building anything, explain your plan."</span></div>
     </ul>
   </div>
   <div class="ch-illust"><img src="../outputs/illustrations/chapter_part6_troubleshoot.png" alt=""></div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════
@@ -1643,6 +1703,7 @@ Before building anything, explain your plan."</span></div>
   </ul>
 
   <div class="page-num">30</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <div class="page">
@@ -1690,6 +1751,7 @@ Before building anything, explain your plan."</span></div>
   </div>
 
   <div class="page-num">31</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════
@@ -1711,6 +1773,7 @@ Before building anything, explain your plan."</span></div>
     </ul>
   </div>
   <div class="ch-illust"><img src="../outputs/illustrations/cover_hero_wide.png" alt=""></div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════
@@ -1739,6 +1802,7 @@ Before building anything, explain your plan."</span></div>
   </table>
 
   <div class="page-num">33</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <div class="page">
@@ -1782,6 +1846,7 @@ Before building anything, explain your plan."</span></div>
   </ul>
 
   <div class="page-num">34</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <div class="page">
@@ -1811,6 +1876,7 @@ Before building anything, explain your plan."</span></div>
   <p style="text-align: center; color: var(--muted); font: 500 13px/1.6 var(--font-heading); margin-top: 48px;">You've reached the end of the guide.<br>Now go build something.</p>
 
   <div class="page-num">35</div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════
@@ -1830,6 +1896,7 @@ Before building anything, explain your plan."</span></div>
       <p style="font: 400 11px/1.6 var(--font-heading); color: rgba(255,255,255,0.15); margin-top: 24px;">&copy; 2026 All rights reserved</p>
     </div>
   </div>
+  <div class="author-foot">Ofir Bloch — <a href="https://linkedin.com/in/ofir-bloch">linkedin.com/in/ofir-bloch</a></div>
 </div>
 
 </body>
