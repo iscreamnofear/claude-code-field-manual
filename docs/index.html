@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ofir's Claude Code Field Manual — Free Guide for Non-Developers | Ofir Bloch</title>
-<meta name="description" content="A free 92-page guide for non-developers who want to build dashboards, websites, and automations with Claude Code. No coding experience required. By Ofir Bloch.">
-<meta property="og:title" content="Ofir's Claude Code Field Manual — Build Real Things with AI">
-<meta property="og:description" content="92 pages. 10 project playbooks. Zero coding required. The free guide that turns non-technical teams into builders.">
+<title>Claude Code Field Manual by Ofir Bloch | Free 92-Page Guide for Operators</title>
+<meta name="description" content="You outgrew the chat window. A free 92-page field manual with 10 playbooks for building dashboards, briefings, and agents with Claude Desktop, Cowork, and the terminal. No email.">
+<meta property="og:title" content="You outgrew the chat window">
+<meta property="og:description" content="The field manual for turning Claude into dashboards, briefings, and working agents. 92 pages, 10 playbooks, free, no email.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://manual.ofirbloch.com">
 <meta property="og:image" content="https://manual.ofirbloch.com/images/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The Claude Code Field Manual, built for non-developers">
+<meta property="og:image:alt" content="You outgrew the chat window. The Claude Code Field Manual.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ofir's Claude Code Field Manual — Build Real Things with AI">
-<meta name="twitter:description" content="92 pages. 10 project playbooks. Zero coding required. The free guide that turns non-technical teams into builders.">
+<meta name="twitter:title" content="You outgrew the chat window">
+<meta name="twitter:description" content="The field manual for turning Claude into dashboards, briefings, and working agents. 92 pages, 10 playbooks, free, no email.">
 <meta name="twitter:image" content="https://manual.ofirbloch.com/images/og-card.png">
 <link rel="canonical" href="https://manual.ofirbloch.com/">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -25,1407 +25,376 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <!-- Umami Analytics (cloud.umami.is) -->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="a87a3b4e-5f12-4149-8660-a4b44c40100a"></script>
 <style>
-/* ═══════════════════════════════════════
-   RESET & CUSTOM PROPERTIES (Mobile-first)
-   ═══════════════════════════════════════ */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-:root {
-  --ink: #1B2332;
-  --ink-deep: #0F1520;
-  --text: #2D3748;
-  --text-light: #4A5568;
-  --muted: #A0AEC0;
-  --white: #FFFFFF;
-  --bg: #F7FAFC;
-  --teal: #0987A0;
-  --teal-dark: #086F83;
-  --teal-bg: #E6FFFA;
-  --brass: #CC785C;
-  --brass-dark: #B3674D;
-  --brass-bg: #FFF5F0;
-  --rule: #E2E8F0;
-  --radius-card: 16px;
-  --radius-btn: 8px;
+/* ══════════════════════════════════════════
+   DARK EDITORIAL SYSTEM
+   bg #02050C · lime #D3FC08 · cold grays
+   Anton / Space Grotesk / JetBrains Mono
+   ══════════════════════════════════════════ */
+:root{
+  --bg:#02050C; --bg-low:#01020A;
+  --lime:#D3FC08; --lime-glow:#CFFF00; --lime-muted:#C8D000;
+  --ink:#F0F0F0; --gray-hi:#8B8987; --gray-mid:#3A3A3B; --gray-dark:#1E1E1F; --crush:#111216;
+  --dotgrid:#2A2A20;
+  --display:'Anton',sans-serif; --body:'Space Grotesk',sans-serif; --mono:'JetBrains Mono',monospace;
 }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  color: var(--text);
-  background: var(--white);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 16px;
-  line-height: 1.6;
-}
-img { max-width: 100%; height: auto; display: block; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+::selection{background:var(--lime);color:var(--bg)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
 
-/* ═══════════════════════════════════════
-   BUTTONS
-   ═══════════════════════════════════════ */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 14px 28px;
-  border-radius: var(--radius-btn);
-  font: 600 15px/1 'Inter', sans-serif;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  cursor: pointer;
-  border: none;
-  min-height: 48px;
-}
-.btn svg { width: 18px; height: 18px; flex-shrink: 0; }
-.btn-arrow { margin-left: 4px; transition: transform 0.2s ease; }
-.btn:hover .btn-arrow { transform: translateX(3px); }
-.btn-primary {
-  background: var(--teal);
-  color: var(--white);
-  box-shadow: 0 4px 14px rgba(9,135,160,0.3);
-}
-.btn-primary:hover {
-  background: var(--teal-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(9,135,160,0.4);
-}
-.btn-secondary {
-  background: rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.7);
-  border: 1px solid rgba(255,255,255,0.12);
-}
-.btn-secondary:hover {
-  background: rgba(255,255,255,0.12);
-  color: var(--white);
-}
+/* dot grid atmosphere */
+.dotfield{position:relative}
+.dotfield::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(var(--dotgrid) 1px, transparent 1px);
+  background-size:26px 26px;opacity:.25;mask-image:radial-gradient(ellipse 70% 60% at 80% 20%, black, transparent 70%)}
 
+/* micro labels */
+.micro{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--lime-muted)}
+.micro .tick{color:var(--gray-mid)}
 
+/* top bar */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(2,5,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--gray-dark)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+.topbar .brand{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--ink)}
+.topbar .brand b{color:var(--lime);font-weight:500}
+.toplink{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--lime);border:1px solid var(--gray-mid);padding:9px 16px;transition:border-color .2s,background .2s}
+.toplink:hover{border-color:var(--lime);background:rgba(211,252,8,.06)}
 
-/* ═══════════════════════════════════════
-   SECTION HELPERS
-   ═══════════════════════════════════════ */
-.section-label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--brass);
-  margin-bottom: 12px;
-}
-.section-title {
-  font-size: 26px;
-  font-weight: 800;
-  color: var(--ink);
-  letter-spacing: -0.5px;
-  line-height: 1.15;
-  margin-bottom: 16px;
-}
-.section-desc {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 16px;
-  color: var(--text-light);
-  line-height: 1.7;
-  max-width: 560px;
-  margin-bottom: 40px;
-}
+/* hero */
+.hero{padding:96px 0 72px;border-bottom:1px solid var(--gray-dark);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:end}
+h1{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--lime);
+  font-size:clamp(56px,9vw,118px);line-height:.94;letter-spacing:.005em;margin:20px 0 28px;
+  text-shadow:0 0 38px rgba(207,255,0,.14)}
+.hero h2{font-family:var(--body);font-weight:500;font-size:clamp(19px,2.4vw,25px);line-height:1.4;color:var(--ink);max-width:640px}
+.hero .sub{margin-top:18px;color:var(--gray-hi);max-width:600px;font-size:17px}
+.cta-row{display:flex;align-items:center;gap:22px;margin-top:38px;flex-wrap:wrap}
+.btn{display:inline-block;font-family:var(--mono);font-size:14px;letter-spacing:.08em;text-transform:uppercase;
+  background:var(--lime);color:var(--bg);padding:18px 30px;font-weight:500;
+  box-shadow:0 0 24px rgba(143,182,0,.32);transition:transform .15s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 0 38px rgba(207,255,0,.45)}
+.btn-ghost{font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--gray-hi);border-bottom:1px solid var(--gray-mid);padding-bottom:3px;transition:color .2s,border-color .2s}
+.btn-ghost:hover{color:var(--lime);border-color:var(--lime)}
+.cta-note{font-family:var(--mono);font-size:12px;color:var(--gray-hi);letter-spacing:.06em}
 
-/* ═══════════════════════════════════════
-   HERO
-   ═══════════════════════════════════════ */
-.hero {
-  background: var(--ink-deep);
-  position: relative;
-  overflow: hidden;
-  padding: 60px 20px 72px;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-.hero-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 32px;
-}
-.hero-text { width: 100%; }
-.hero-badge {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--brass);
-  margin-bottom: 20px;
-  opacity: 0.8;
-}
-.hero h1 {
-  font-size: 32px;
-  font-weight: 900;
-  color: var(--white);
-  line-height: 1.08;
-  letter-spacing: -1px;
-  margin-bottom: 20px;
-}
-.hero h1 .accent { color: var(--brass); }
-.hero-subtitle {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 16px;
-  color: rgba(255,255,255,0.75);
-  line-height: 1.7;
-  max-width: 480px;
-  margin: 0 auto 24px;
-}
-.hero-proof {
-  font-size: 13px;
-  color: rgba(255,255,255,0.55);
-  margin-bottom: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-.hero-proof svg { width: 16px; height: 16px; opacity: 0.5; }
-.hero-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-.hero-actions .btn { width: 100%; }
+/* surface spec card */
+.spec{border:1px solid var(--gray-mid);background:linear-gradient(180deg,var(--crush),var(--bg-low));padding:26px 26px 20px;position:relative}
+.spec::before{content:"";position:absolute;top:-1px;left:-1px;width:34px;height:34px;border-top:2px solid var(--lime);border-left:2px solid var(--lime)}
+.spec h3{font-family:var(--mono);font-size:12px;letter-spacing:.18em;color:var(--lime-muted);font-weight:500;margin-bottom:18px}
+.spec .row{display:flex;justify-content:space-between;gap:14px;padding:13px 0;border-top:1px solid var(--gray-dark);font-family:var(--mono);font-size:13px}
+.spec .row .k{color:var(--ink);letter-spacing:.06em}
+.spec .row .v{color:var(--gray-hi);text-align:right}
+.spec .row.lit .k{color:var(--lime)}
+.spec .foot{margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--gray-mid);letter-spacing:.08em}
 
-/* Hero visual */
-.hero-visual {
-  width: 240px;
-  flex-shrink: 0;
-  order: -1;
-}
-.hero-visual img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  filter: drop-shadow(0 20px 60px rgba(0,0,0,0.5)) drop-shadow(0 0 40px rgba(9,135,160,0.15));
-}
+/* stats strip */
+.stats{border-bottom:1px solid var(--gray-dark)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:34px 10px;text-align:center;border-left:1px solid var(--gray-dark)}
+.stat:first-child{border-left:none}
+.stat .n{font-family:var(--display);font-size:54px;color:var(--ink);line-height:1}
+.stat .l{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gray-hi);margin-top:8px}
+.stat.lit .n{color:var(--lime)}
 
-/* Corner bracket decoration on hero */
-.hero::after {
-  content: '\231C';
-  position: absolute;
-  top: 24px;
-  left: 24px;
-  font-size: 32px;
-  color: var(--brass);
-  opacity: 0.15;
-  z-index: 1;
-}
+/* sections */
+section{padding:96px 0}
+.sec-head{margin-bottom:54px;max-width:760px}
+.sec-head h2{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(34px,4.6vw,56px);line-height:1.02;color:var(--ink);margin:14px 0 16px}
+.sec-head h2 em{font-style:normal;color:var(--lime)}
+.sec-head p{color:var(--gray-hi)}
 
-/* ═══════════════════════════════════════
-   STATS BAR
-   ═══════════════════════════════════════ */
-.stats {
-  background: var(--bg);
-  border-bottom: 1px solid var(--rule);
-  padding: 28px 20px;
-}
-.stats-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-.stat { text-align: center; }
-.stat-num {
-  font-size: 24px;
-  font-weight: 800;
-  color: var(--teal);
-  letter-spacing: -1px;
-  position: relative;
-  display: inline-block;
-  padding: 0 6px;
-}
-.stat-num::before {
-  content: '\231C';
-  position: absolute;
-  top: -4px;
-  left: -6px;
-  font-size: 12px;
-  color: var(--brass);
-  opacity: 0.3;
-}
-.stat-num::after {
-  content: '\231D';
-  position: absolute;
-  top: -4px;
-  right: -6px;
-  font-size: 12px;
-  color: var(--brass);
-  opacity: 0.3;
-}
-.stat-label {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 2px;
-}
+/* persona cards */
+.who{border-bottom:1px solid var(--gray-dark)}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--gray-dark);border:1px solid var(--gray-dark)}
+.card{background:var(--bg);padding:34px;position:relative;transition:background .2s}
+.card:hover{background:var(--crush)}
+.card::after{content:"";position:absolute;left:0;top:0;height:0;width:2px;background:var(--lime);transition:height .25s}
+.card:hover::after{height:100%}
+.card .tag{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--lime-muted)}
+.card blockquote{margin:14px 0;font-size:18px;line-height:1.5;color:var(--ink);font-weight:500}
+.card p{color:var(--gray-hi);font-size:15.5px}
+.card p b{color:var(--ink);font-weight:500}
+.card.wide{grid-column:1/-1}
 
-/* ═══════════════════════════════════════
-   WHO THIS IS FOR
-   ═══════════════════════════════════════ */
-.for-section {
-  padding: 56px 20px;
-  max-width: 960px;
-  margin: 0 auto;
-}
-.for-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  margin-top: 40px;
-}
-.for-card {
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  border: 1px solid var(--rule);
-  background: var(--white);
-  transition: all 0.3s ease;
-}
-.for-card:hover {
-  border-color: var(--teal);
-  box-shadow: 0 8px 32px rgba(9,135,160,0.10);
-  transform: translateY(-3px);
-}
-.for-card-img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-.for-card-body { padding: 24px; }
-.for-role {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--brass);
-  margin-bottom: 8px;
-}
-.for-pain {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 16px;
-  font-style: italic;
-  color: var(--ink);
-  line-height: 1.5;
-  margin-bottom: 14px;
-}
-.for-solve {
-  font-size: 14px;
-  color: var(--text-light);
-  line-height: 1.6;
-}
-.for-solve strong { color: var(--teal); font-weight: 700; }
+/* inside parts */
+.inside{border-bottom:1px solid var(--gray-dark)}
+.parts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gray-dark);border:1px solid var(--gray-dark)}
+.part{background:var(--bg);padding:30px;transition:background .2s}
+.part:hover{background:var(--crush)}
+.part .num{font-family:var(--display);font-size:30px;color:var(--gray-mid)}
+.part h3{font-family:var(--body);font-weight:700;font-size:17px;margin:12px 0 8px;color:var(--ink)}
+.part p{font-size:14.5px;color:var(--gray-hi)}
 
-/* Exec callout */
-.exec-callout {
-  margin-top: 32px;
-  padding: 24px 20px;
-  border-radius: 14px;
-  background: var(--brass-bg);
-  border: 1px solid rgba(204,120,92,0.18);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 16px;
-}
-.exec-callout-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: var(--brass);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.exec-callout-icon svg { width: 22px; height: 22px; }
-.exec-callout-body { flex: 1; }
-.exec-callout-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 6px;
-}
-.exec-callout-desc {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 14px;
-  color: var(--text-light);
-  line-height: 1.6;
-}
+/* mid cta */
+.midcta{border-bottom:1px solid var(--gray-dark);text-align:center}
+.midcta p.big{font-family:var(--display);text-transform:uppercase;font-size:clamp(26px,3.6vw,42px);line-height:1.1;color:var(--ink);max-width:820px;margin:0 auto 14px}
+.midcta p.big em{font-style:normal;color:var(--lime)}
+.midcta p.small{color:var(--gray-hi);margin-bottom:34px}
 
-/* ═══════════════════════════════════════
-   WHAT'S INSIDE — Chapter Cards
-   ═══════════════════════════════════════ */
-.inside {
-  padding: 56px 20px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-.chapters-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-.chapter-card {
-  display: flex;
-  flex-direction: column;
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  border: 1px solid var(--rule);
-  background: var(--white);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-.chapter-card:hover {
-  border-color: var(--teal);
-  box-shadow: 0 8px 32px rgba(9,135,160,0.08);
-}
-.chapter-card-img {
-  width: 100%;
-  height: 180px;
-  overflow: hidden;
-}
-.chapter-card-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.chapter-card-body { padding: 20px; }
-.chapter-num {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--brass);
-  margin-bottom: 6px;
-}
-.chapter-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 6px;
-  letter-spacing: -0.3px;
-}
-.chapter-desc {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 15px;
-  color: var(--text-light);
-  line-height: 1.6;
-}
+/* playbooks */
+.playbooks{border-bottom:1px solid var(--gray-dark)}
+.pb{border:1px solid var(--gray-dark);border-bottom:none}
+.pb:last-of-type{border-bottom:1px solid var(--gray-dark)}
+.pb summary{display:flex;align-items:baseline;gap:22px;padding:22px 26px;cursor:pointer;list-style:none;transition:background .2s}
+.pb summary::-webkit-details-marker{display:none}
+.pb summary:hover{background:var(--crush)}
+.pb .idx{font-family:var(--mono);font-size:13px;color:var(--lime-muted);min-width:28px}
+.pb .t{font-family:var(--body);font-weight:700;font-size:18px;color:var(--ink);flex:1}
+.pb .time{font-family:var(--mono);font-size:12px;color:var(--gray-hi);letter-spacing:.04em}
+.pb .chev{color:var(--gray-mid);font-family:var(--mono);transition:transform .2s}
+.pb[open] .chev{transform:rotate(90deg);color:var(--lime)}
+.pb .body{padding:0 26px 26px 76px;color:var(--gray-hi);font-size:15.5px}
+.pb .body .build{margin-top:10px;color:var(--ink)}
+.pb .body .build b{color:var(--lime);font-weight:500;font-family:var(--mono);font-size:13px;letter-spacing:.08em}
+.pb .meta{margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--gray-mid);letter-spacing:.04em}
 
-/* ═══════════════════════════════════════
-   MID-PAGE CTA
-   ═══════════════════════════════════════ */
-.mid-cta {
-  background: var(--teal-bg);
-  padding: 48px 20px;
-  text-align: center;
-  border-top: 1px solid rgba(9,135,160,0.15);
-  border-bottom: 1px solid rgba(9,135,160,0.15);
-}
-.mid-cta-inner { max-width: 560px; margin: 0 auto; }
-.mid-cta p {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 18px;
-  color: var(--ink);
-  line-height: 1.6;
-  margin-bottom: 24px;
-  font-weight: 500;
-}
+/* author */
+.author{border-bottom:1px solid var(--gray-dark)}
+.author-grid{display:grid;grid-template-columns:240px 1fr;gap:54px;align-items:start}
+.author img{width:240px;filter:grayscale(1) contrast(1.08);border:1px solid var(--gray-mid)}
+.author h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:34px;color:var(--ink);margin:14px 0 4px}
+.author .role{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime-muted);margin-bottom:20px}
+.author p{color:var(--gray-hi);max-width:640px;margin-bottom:14px}
+.author p b{color:var(--ink);font-weight:500}
+.author .links{margin-top:26px;display:flex;gap:26px;align-items:center}
 
-/* ═══════════════════════════════════════
-   PLAYBOOKS
-   ═══════════════════════════════════════ */
-.playbooks {
-  background: var(--ink-deep);
-  padding: 56px 20px;
-  color: var(--white);
-}
-.playbooks-inner { max-width: 900px; margin: 0 auto; }
-.playbooks .section-label { color: var(--brass); }
-.playbooks .section-title { color: var(--white); }
-.playbooks .section-desc { color: rgba(255,255,255,0.7); }
+/* bottom cta */
+.bottom{text-align:center;padding:120px 0}
+.bottom h2{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(40px,6vw,76px);line-height:1;color:var(--lime);margin-bottom:18px;text-shadow:0 0 38px rgba(207,255,0,.14)}
+.bottom p{color:var(--gray-hi);max-width:560px;margin:0 auto 38px}
 
-/* Playbooks illustration */
-.playbooks-visual {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  display: block;
-  margin: 0 auto 48px;
-  border-radius: var(--radius-card);
-  opacity: 0.9;
-}
+/* footer */
+footer{border-top:1px solid var(--gray-dark);padding:30px 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+footer span{font-family:var(--mono);font-size:12px;color:var(--gray-mid);letter-spacing:.06em}
+footer a{color:var(--gray-hi);transition:color .2s}
+footer a:hover{color:var(--lime)}
 
-/* Accordion controls */
-.playbook-controls {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 16px;
-}
-.toggle-all {
-  background: none;
-  border: 1px solid rgba(255,255,255,0.15);
-  color: rgba(255,255,255,0.7);
-  font: 500 12px/1 'Inter', sans-serif;
-  letter-spacing: 0.5px;
-  padding: 8px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  min-height: 44px;
-}
-.toggle-all:hover {
-  color: rgba(255,255,255,0.8);
-  border-color: rgba(255,255,255,0.3);
-  background: rgba(255,255,255,0.05);
-}
-.toggle-all svg { width: 14px; height: 14px; }
+/* reveal animation */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rv.on{opacity:1;transform:none}
+.hero .rv{transition-duration:.8s}
 
-/* Playbook list */
-.playbook-list { display: flex; flex-direction: column; gap: 0; }
-.playbook-item {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 18px 20px;
-  background: rgba(255,255,255,0.03);
-  border: none;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  cursor: pointer;
-  position: relative;
-  flex-wrap: wrap;
-  transition: all 0.25s ease;
-}
-.playbook-item:first-child {
-  border-top: 1px solid rgba(255,255,255,0.08);
-  border-radius: 8px 8px 0 0;
-}
-.playbook-item:last-child {
-  border-radius: 0 0 8px 8px;
-}
-.playbook-item:hover {
-  background: rgba(255,255,255,0.07);
-}
-.playbook-item[aria-expanded="true"] {
-  background: rgba(255,255,255,0.06);
-}
-.playbook-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  width: 100%;
-}
-.playbook-number {
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--brass);
-  min-width: 36px;
-}
-.playbook-name {
-  font-size: 15px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.8);
-}
-.playbook-pips { display: flex; gap: 3px; margin-top: 4px; }
-.playbook-pip {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  border: 1.5px solid var(--brass);
-}
-.playbook-pip.filled { background: var(--brass); }
-.playbook-toggle {
-  margin-left: auto;
-  width: 28px;
-  height: 28px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.06);
-  transition: all 0.25s ease;
-  position: relative;
-}
-.playbook-item[aria-expanded="true"] .playbook-toggle {
-  background: rgba(204,120,92,0.25);
-}
-.playbook-toggle::before,
-.playbook-toggle::after {
-  content: '';
-  position: absolute;
-  background: rgba(255,255,255,0.4);
-  border-radius: 1px;
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-.playbook-toggle::before { width: 12px; height: 2px; }
-.playbook-toggle::after { width: 2px; height: 12px; }
-.playbook-item[aria-expanded="true"] .playbook-toggle::after {
-  transform: rotate(90deg);
-  opacity: 0;
-}
-.playbook-item[aria-expanded="true"] .playbook-toggle::before {
-  background: var(--brass);
-}
-
-/* Playbook detail expand */
-.playbook-detail {
-  width: 100%;
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.3s ease;
-  padding: 0 0 0 20px;
-}
-.playbook-item[aria-expanded="true"] .playbook-detail {
-  max-height: 300px;
-  padding: 16px 12px 8px 20px;
-  opacity: 1;
-}
-.playbook-hook {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 15px;
-  font-style: italic;
-  color: rgba(255,255,255,0.78);
-  line-height: 1.65;
-  margin-bottom: 12px;
-}
-.playbook-outcome {
-  font-size: 13px;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.5;
-  margin-bottom: 10px;
-}
-.playbook-outcome span { color: var(--brass); font-weight: 600; }
-.playbook-confidence {
-  font-size: 12px;
-  color: rgba(255,255,255,0.5);
-  line-height: 1.5;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-.playbook-confidence .dot-sep {
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.35);
-  flex-shrink: 0;
-}
-
-/* ═══════════════════════════════════════
-   AUTHOR
-   ═══════════════════════════════════════ */
-.author-section {
-  padding: 56px 20px;
-  border-top: 1px solid var(--rule);
-}
-.author-inner {
-  max-width: 740px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 24px;
-}
-.author-avatar {
-  width: 96px;
-  height: 96px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-.author-avatar img { width: 100%; height: 100%; object-fit: cover; }
-.author-name {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 4px;
-}
-.author-role {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--brass);
-  margin-bottom: 14px;
-  letter-spacing: 0.3px;
-}
-.author-bio {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 15px;
-  color: var(--text-light);
-  line-height: 1.7;
-  margin-bottom: 16px;
-}
-.author-proof {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--teal);
-  margin-bottom: 20px;
-  padding: 6px 14px;
-  background: var(--teal-bg);
-  border-radius: 8px;
-  border: 1px solid rgba(9,135,160,0.12);
-}
-.author-proof svg { width: 14px; height: 14px; flex-shrink: 0; }
-.author-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.author-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  border-radius: var(--radius-btn);
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  background: var(--teal);
-  color: var(--white);
-  transition: background 0.2s;
-  min-height: 44px;
-}
-.author-cta:hover { background: var(--teal-dark); }
-.author-cta svg { width: 16px; height: 16px; }
-.author-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.2s;
-  min-height: 44px;
-}
-.author-link:hover { color: var(--teal); }
-.author-link svg { width: 15px; height: 15px; }
-
-/* ═══════════════════════════════════════
-   BOTTOM CTA
-   ═══════════════════════════════════════ */
-.cta-bottom {
-  background: var(--ink-deep);
-  padding: 56px 20px 100px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.cta-bottom::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-.cta-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 560px;
-  margin: 0 auto;
-}
-.cta-bottom h2 {
-  font-size: 26px;
-  font-weight: 800;
-  color: var(--white);
-  letter-spacing: -0.5px;
-  margin-bottom: 16px;
-}
-.cta-bottom p {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 16px;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.7;
-  margin-bottom: 32px;
-}
-.cta-bottom .btn-primary {
-  font-size: 17px;
-  padding: 18px 40px;
-}
-.cta-bottom-sub {
-  margin-top: 16px;
-  font-size: 13px;
-  color: rgba(255,255,255,0.5);
-}
-
-/* ═══════════════════════════════════════
-   FOOTER
-   ═══════════════════════════════════════ */
-footer {
-  padding: 32px 20px 72px;
-  text-align: center;
-  font-size: 12px;
-  color: var(--muted);
-  border-top: 1px solid var(--rule);
-}
-footer a { color: var(--teal); text-decoration: none; }
-footer a:hover { text-decoration: underline; }
-
-/* ═══════════════════════════════════════
-   STICKY CTA (all viewports)
-   ═══════════════════════════════════════ */
-.sticky-cta {
-  display: block;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: var(--ink-deep);
-  padding: 12px 20px;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  z-index: 100;
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
-}
-.sticky-cta.visible {
-  transform: translateY(0);
-}
-.sticky-cta .btn {
-  width: 100%;
-  padding: 14px 24px;
-  font-size: 15px;
-}
-
-/* ═══════════════════════════════════════
-   TABLET+ (min-width: 768px)
-   ═══════════════════════════════════════ */
-@media (min-width: 768px) {
-  /* Hero */
-  .hero { padding: 80px 24px 96px; }
-  .hero-inner {
-    flex-direction: row;
-    text-align: left;
-    gap: 56px;
-  }
-  .hero-visual {
-    width: 420px;
-    max-width: 420px;
-    order: 0;
-  }
-  .hero h1 { font-size: clamp(36px, 5vw, 52px); letter-spacing: -1.5px; }
-  .hero-subtitle {
-    font-size: 18px;
-    margin: 0 0 28px;
-  }
-  .hero-proof { justify-content: flex-start; }
-  .hero-actions {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-  .hero-actions .btn { width: auto; }
-
-  /* Stats */
-  .stats { padding: 32px 24px; }
-  .stats-inner {
-    flex-direction: row;
-    justify-content: center;
-    gap: 48px;
-  }
-  .stat-num { font-size: 28px; }
-
-  /* Who This Is For */
-  .for-section { padding: 80px 24px; }
-  .for-grid { grid-template-columns: repeat(2, 1fr); }
-  .for-card-img { height: 200px; }
-
-  /* Exec callout */
-  .exec-callout {
-    flex-direction: row;
-    text-align: left;
-    align-items: flex-start;
-    padding: 28px 32px;
-    gap: 20px;
-  }
-
-  /* What's Inside — side-by-side cards with alternation */
-  .inside { padding: 80px 24px; }
-  .section-title { font-size: 32px; letter-spacing: -1px; }
-  .chapter-card {
-    flex-direction: row;
-    align-items: center;
-  }
-  .chapter-card:nth-child(even) { flex-direction: row-reverse; }
-  .chapter-card-img {
-    width: 280px;
-    height: 180px;
-    flex-shrink: 0;
-  }
-  .chapter-card-body { padding: 24px 32px; }
-
-  /* Playbooks */
-  .playbooks { padding: 80px 24px; }
-  .playbook-item { padding: 18px 24px; }
-  .playbook-detail { padding-left: 60px; }
-  .playbook-item[aria-expanded="true"] .playbook-detail {
-    padding: 16px 24px 8px 60px;
-  }
-
-  /* Author */
-  .author-section { padding: 80px 24px; }
-  .author-inner {
-    flex-direction: row;
-    text-align: left;
-    align-items: flex-start;
-    gap: 32px;
-  }
-  .author-actions { justify-content: flex-start; }
-
-  /* Bottom CTA */
-  .cta-bottom { padding: 80px 24px; }
-  .cta-bottom h2 { font-size: 32px; letter-spacing: -1px; }
-
-  /* Footer */
-  footer { padding: 32px 24px; }
-
-  /* Sticky CTA — compact bar on tablet+ */
-  .sticky-cta {
-    padding: 10px 24px;
-  }
-  .sticky-cta .btn {
-    max-width: 360px;
-    margin: 0 auto;
-    padding: 12px 24px;
-  }
-}
-
-/* ═══════════════════════════════════════
-   DESKTOP (min-width: 1200px)
-   ═══════════════════════════════════════ */
-@media (min-width: 1200px) {
-  .hero { padding: 100px 24px 112px; }
-  .hero-inner { gap: 72px; }
-  .hero-visual { width: 480px; max-width: 480px; }
-  .hero h1 { font-size: 56px; letter-spacing: -2px; }
-
-  .for-grid { grid-template-columns: repeat(4, 1fr); }
-
-  .chapter-card-img { width: 320px; height: 200px; }
-  .chapter-title { font-size: 20px; }
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .stats .wrap{grid-template-columns:repeat(2,1fr)}
+  .stat{border-left:none;border-top:1px solid var(--gray-dark)}
+  .cards{grid-template-columns:1fr}
+  .parts{grid-template-columns:1fr}
+  .author-grid{grid-template-columns:1fr}
+  .pb .body{padding-left:26px}
+  section{padding:64px 0}
 }
 </style>
 </head>
 <body>
 
-<!-- ═══════ HERO ═══════ -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-text">
-      <div class="hero-badge">Free 92-Page Guide &mdash; 2026 Edition</div>
-      <h1>Stop waiting for IT.<br>Start <span class="accent">building</span>.</h1>
-      <p class="hero-subtitle">A free field manual that teaches non-developers how to build dashboards, websites, and automations with Claude Code &mdash; no coding required.</p>
-      <div class="hero-proof">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Free PDF &bull; No email required &bull; Instant download
-      </div>
-      <div class="hero-actions">
-        <a href="./Claude_Code_Field_Manual.pdf" class="btn btn-primary" download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download Free PDF
-          <span class="btn-arrow">&rarr;</span>
-        </a>
-        <a href="#whats-inside" class="btn btn-secondary">
-          See what's inside
-        </a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <img src="images/book-mockup-hero.png" alt="Ofir's Claude Code Field Manual — 92-page guide to building without code" width="1376" height="768" fetchpriority="high">
-    </div>
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">CLAUDE CODE <b>FIELD MANUAL</b></a>
+    <a class="toplink" href="/Claude_Code_Field_Manual.pdf" data-umami-event="download-topbar">GET THE PDF</a>
   </div>
-</section>
+</div>
 
-<!-- ═══════ STATS ═══════ -->
-<section class="stats">
-  <div class="stats-inner">
-    <div class="stat"><div class="stat-num">92</div><div class="stat-label">Pages</div></div>
-    <div class="stat"><div class="stat-num">10</div><div class="stat-label">Project Playbooks</div></div>
-    <div class="stat"><div class="stat-num">1</div><div class="stat-label">Afternoon to Learn</div></div>
-    <div class="stat"><div class="stat-num">0</div><div class="stat-label">Lines of Code</div></div>
-  </div>
-</section>
-
-<!-- ═══════ WHO THIS IS FOR ═══════ -->
-<section class="for-section" id="who-this-is-for">
-  <div class="section-label">Who This Is For</div>
-  <h2 class="section-title">Built for people who don't write code</h2>
-  <p class="section-desc">If you've ever thought "I wish I could just build this myself," this guide is for you.</p>
-  <div class="for-grid">
-    <div class="for-card">
-      <img class="for-card-img" src="images/personas/marketer.png" alt="Confident marketer standing in front of campaign dashboard with funnel and charts" loading="lazy" decoding="async" width="1024" height="1024">
-      <div class="for-card-body">
-        <div class="for-role">Marketing Teams</div>
-        <div class="for-pain">"We have six AI tools and I still can't get a dashboard that shows what I actually need."</div>
-        <div class="for-solve">Build your own <strong>dashboards, landing pages, and competitive trackers</strong>. In an afternoon. No tickets, no templates, no compromise on what you actually want.</div>
-      </div>
-    </div>
-    <div class="for-card">
-      <img class="for-card-img" src="images/personas/ops-leader.png" alt="Automated workflow machine with conveyor belt, gears, and clock saving time" loading="lazy" decoding="async" width="1024" height="1024">
-      <div class="for-card-body">
-        <div class="for-role">Operations &amp; CS Leaders</div>
-        <div class="for-pain">"I manage 3x the accounts I had two years ago. My reporting process hasn't changed at all."</div>
-        <div class="for-solve">Automate the <strong>reports your team dreads, build FAQ bots</strong> that actually reflect your product, and create <strong>team wikis</strong> that stay current without anyone maintaining them.</div>
-      </div>
-    </div>
-    <div class="for-card">
-      <img class="for-card-img" src="images/personas/sales-rep.png" alt="Sales pipeline board with deal cards, lead scores, and outreach icons" loading="lazy" decoding="async" width="1024" height="1024">
-      <div class="for-card-body">
-        <div class="for-role">Sales &amp; Revenue Teams</div>
-        <div class="for-pain">"My CRM has 10,000 contacts. I still build my call list in a spreadsheet every morning."</div>
-        <div class="for-solve">Build <strong>lead scoring tools, pipeline trackers, and outreach generators</strong> tuned to how your team actually sells. Not how some vendor thinks you should.</div>
-      </div>
-    </div>
-    <div class="for-card">
-      <img class="for-card-img" src="images/personas/revops.png" alt="Connected data nodes flowing into a custom internal tool dashboard" loading="lazy" decoding="async" width="1024" height="1024">
-      <div class="for-card-body">
-        <div class="for-role">RevOps &amp; BizOps</div>
-        <div class="for-pain">"I can see the problem in the data. I just can't build the fix without filing a Jira ticket."</div>
-        <div class="for-solve">Connect your data sources, <strong>build custom workflows, and ship internal tools</strong> your team actually uses. On your timeline, not engineering's backlog.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Exec callout -->
-  <div class="exec-callout">
-    <div class="exec-callout-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
-    </div>
-    <div class="exec-callout-body">
-      <div class="exec-callout-title">Non-technical execs &amp; team leads</div>
-      <div class="exec-callout-desc">You don't need to build anything yourself. This guide helps you <strong style="color:var(--brass);">understand what AI can actually ship today</strong> &mdash; so you can set realistic expectations, spot good use cases, and lead teams that use these tools well.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════ WHAT'S INSIDE ═══════ -->
-<section class="inside" id="whats-inside">
-  <div class="section-label">What's Inside</div>
-  <h2 class="section-title">From "what is this?" to shipping real tools</h2>
-  <p class="section-desc">Six parts that build on each other. Start anywhere. Each chapter is self-contained, jargon-free, and designed to get you building fast.</p>
-  <div class="chapters-grid">
-    <article class="chapter-card">
-      <div class="chapter-card-img">
-        <img src="images/parts/part1-what-is-this.png" alt="Person pondering at desk with holographic cube and floating screens" loading="lazy" decoding="async" width="1200" height="924">
-      </div>
-      <div class="chapter-card-body">
-        <div class="chapter-num">Part 1</div>
-        <h3 class="chapter-title">What Is This Thing?</h3>
-        <p class="chapter-desc">Claude vs Cowork vs Claude Code &mdash; and when to use each.</p>
-      </div>
-    </article>
-    <article class="chapter-card">
-      <div class="chapter-card-img">
-        <img src="images/parts/part2-cowork.png" alt="Person at desk with documents flowing in a creative arc" loading="lazy" decoding="async" width="1200" height="924">
-      </div>
-      <div class="chapter-card-body">
-        <div class="chapter-num">Part 2</div>
-        <h3 class="chapter-title">Start Here: Cowork</h3>
-        <p class="chapter-desc">Turn messy docs into clean reports without touching code.</p>
-      </div>
-    </article>
-    <article class="chapter-card">
-      <div class="chapter-card-img">
-        <img src="images/parts/part3-desktop.png" alt="Person at dual monitors with project folders and rocket" loading="lazy" decoding="async" width="1200" height="924">
-      </div>
-      <div class="chapter-card-body">
-        <div class="chapter-num">Part 3</div>
-        <h3 class="chapter-title">Level Up: Claude Code Desktop</h3>
-        <p class="chapter-desc">Build websites, dashboards, and tools &mdash; then ship them.</p>
-      </div>
-    </article>
-    <article class="chapter-card">
-      <div class="chapter-card-img">
-        <img src="images/parts/part4-talking.png" alt="Person at laptop with chat bubbles, charts, and AI assistant" loading="lazy" decoding="async" width="1200" height="924">
-      </div>
-      <div class="chapter-card-body">
-        <div class="chapter-num">Part 4</div>
-        <h3 class="chapter-title">Talking to Claude So It Actually Gets It</h3>
-        <p class="chapter-desc">Five prompting rules and the Interview-Plan-Build method.</p>
-      </div>
-    </article>
-    <article class="chapter-card">
-      <div class="chapter-card-img">
-        <img src="images/parts/part5-safety.png" alt="Laptop with security shield and lock, checklist tablet nearby" loading="lazy" decoding="async" width="1200" height="924">
-      </div>
-      <div class="chapter-card-body">
-        <div class="chapter-num">Part 5</div>
-        <h3 class="chapter-title">The Safety Stuff</h3>
-        <p class="chapter-desc">Permissions, undo, and protecting your files.</p>
-      </div>
-    </article>
-    <article class="chapter-card">
-      <div class="chapter-card-img">
-        <img src="images/parts/part6-wrong.png" alt="Person at desk with warning triangles and open toolbox" loading="lazy" decoding="async" width="1200" height="924">
-      </div>
-      <div class="chapter-card-body">
-        <div class="chapter-num">Part 6</div>
-        <h3 class="chapter-title">When Things Go Wrong</h3>
-        <p class="chapter-desc">Hallucinations, how to verify output, and when to start over.</p>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- ═══════ MID-PAGE CTA ═══════ -->
-<section class="mid-cta">
-  <div class="mid-cta-inner">
-    <p>92 pages. 10 playbooks. Zero code required.<br>Download it now &mdash; takes two seconds, no email needed.</p>
-    <a href="./Claude_Code_Field_Manual.pdf" class="btn btn-primary" download>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      Download Free PDF
-      <span class="btn-arrow">&rarr;</span>
-    </a>
-  </div>
-</section>
-
-<!-- ═══════ PLAYBOOKS ═══════ -->
-<section class="playbooks" id="playbooks">
-  <div class="playbooks-inner">
-    <div class="section-label">Included</div>
-    <h2 class="section-title">10 copy-paste project playbooks</h2>
-    <p class="section-desc">Real projects. Exact prompts. Each playbook tells you who it's for, what you'll build, and how long it takes.</p>
-    <img src="images/chapter_playbooks.png" alt="Workbench with 10 project cards showing dashboards, websites, reports, bots, and more" class="playbooks-visual" loading="lazy" decoding="async" width="1200" height="924">
-    <div class="playbook-controls">
-      <button class="toggle-all" id="toggleAll" aria-label="Expand or collapse all playbooks">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/><polyline points="6 15 12 21 18 15"/></svg>
-        <span>Expand All</span>
-      </button>
-    </div>
-    <div class="playbook-list" id="playbookList">
-      <div class="playbook-item" role="button" tabindex="0" aria-expanded="false">
-        <div class="playbook-header">
-          <div class="playbook-number">01</div>
-          <div><div class="playbook-name">Spreadsheet to Dashboard</div><div class="playbook-pips"><span class="playbook-pip filled"></span><span class="playbook-pip filled"></span><span class="playbook-pip"></span></div></div>
-          <div class="playbook-toggle"></div>
-        </div>
-        <div class="playbook-detail">
-          <div class="playbook-hook">Your boss wants a dashboard. You have the data in Excel. Skip the six-week dev request.</div>
-          <div class="playbook-outcome"><span>&rarr; You'll build:</span> a live dashboard with charts and filters your team can bookmark and check anytime.</div>
-          <div class="playbook-confidence">30&ndash;60 minutes <span class="dot-sep"></span> Marketing ops, sales ops, CS leads <span class="dot-sep"></span> Beginner-friendly</div>
-        </div>
-      </div>
-      <div class="playbook-item" role="button" tabindex="0" aria-expanded="false">
-        <div class="playbook-header">
-          <div class="playbook-number">02</div>
-          <div><div class="playbook-name">Marketing Website</div><div class="playbook-pips"><span class="playbook-pip filled"></span><span class="playbook-pip filled"></span><span class="playbook-pip"></span></div></div>
-          <div class="playbook-toggle"></div>
-        </div>
-        <div class="playbook-detail">
-          <div class="playbook-hook">A professional site you control, without waiting for the web team.</div>
-          <div class="playbook-outcome"><span>&rarr; You'll build:</span> a multi-page website (home, about, contact) you can deploy and share a real URL for.</div>
-          <div class="playbook-confidence">1&ndash;2 hours <span class="dot-sep"></span> Marketing managers, founders <span class="dot-sep"></span> Intermediate</div>
-        </div>
-      </div>
-      <div class="playbook-item" role="button" tabindex="0" aria-expanded="false">
-        <div class="playbook-header">
-          <div class="playbook-number">03</div>
-          <div><div class="playbook-name">Monday Morning Report</div><div class="playbook-pips"><span class="playbook-pip filled"></span><span class="playbook-pip"></span><span class="playbook-pip"></span></div></div>
-          <div class="playbook-toggle"></div>
-        </div>
-        <div class="playbook-detail">
-          <div class="playbook-hook">The report your boss reads every Monday, built automatically from your data. Saves 30&ndash;45 min/week.</div>
-          <div class="playbook-outcome"><span>&rarr; You'll build:</span> a formatted executive summary that updates in minutes, not hours.</div>
-          <div class="playbook-confidence">15 min first run, 2 min after <span class="dot-sep"></span> Anyone reporting metrics <span class="dot-sep"></span> Easiest project</div>
-        </div>
-      </div>
-      <div class="playbook-item" role="button" tabindex="0" aria-expanded="false">
-        <div class="playbook-header">
-          <div class="playbook-number">04</div>
-          <div><div class="playbook-name">Competitive Intel Tracker</div><div class="playbook-pips"><span class="playbook-pip filled"></span><span class="playbook-pip"></span><span class="playbook-pip"></span></div></div>
-          <div class="playbook-toggle"></div>
-        </div>
-        <div class="playbook-detail">
-          <div class="playbook-hook">Know what your competitors are doing. Organized, searchable, shareable.</div>
-          <div class="playbook-outcome"><span>&rarr; You'll build:</span> a competitive intelligence spreadsheet you update monthly by just dropping in new materials.</div>
-          <div class="playbook-confidence">45 min setup, 15 min monthly <span class="dot-sep"></span> Product marketing, strategy <span class="dot-sep"></span> Beginner-friendly</div>
-        </div>
-      </div>
-      <div class="playbook-item" role="button" tabindex="0" aria-expanded="false">
-        <div class="playbook-header">
-          <div class="playbook-number">05</div>
-          <div><div class="playbook-name">Customer FAQ Bot</div><div class="playbook-pips"><span class="playbook-pip filled"></span><span class="playbook-pip filled"></span><span class="playbook-pip filled"></span></div></div>
-          <div class="playbook-toggle"></div>
-        </div>
-        <div class="playbook-detail">
-          <div class="playbook-hook">A chatbot that answers customer questions using your actual documentation, not made-up answers.</div>
-          <div class="playbook-outcome"><span>&rarr; You'll build:</span> a chat widget that searches your docs, cites sources, and says "I don't know" when it should.</div>
-          <div class="playbook-confidence">3&ndash;5 hours <span class="dot-sep"></span> Customer success, support teams <span class="dot-sep"></span> Most complex &mdash; most valuable</div>
-        </div>
-      </div>
-      <div class="playbook-item" role="button" tabindex="0" aria-expanded="false">
-        <div class="playbook-header">
-          <div class="playbook-number">06</div>
-          <div><div class="playbook-name">Event Landing Page</div><div class="playbook-pips"><span class="playbook-pip filled"></span><span class="playbook-pip filled"></span><span class="playbook-pip"></span></div></div>
-          <div class="playbook-toggle"></div>
-        </div>
-        <div class="playbook-detail">
-          <div class="playbook-hook">A page for your next webinar, conference, or product launch. Live in an afternoon.</div>
-          <div class="playbook-outcome"><span>&rarr; You'll build:</span> a landing page with countdown timer, speaker bios, and a working registration form.</div>
-          <div class="playbook-confidence">1&ndash;2 hours <span class="dot-sep"></span> Event marketers, demand gen <span class="dot-sep"></span> Intermediate</div>
-        </div>
-      </div>
-      <div class="playbook-item" role="button" tabindex="0" aria-expanded="false">
-        <div class="playbook-header">
-          <div class="playbook-number">07</div>
-          <div><div class="playbook-name">Team Wiki / Knowledge Base</div><div class="playbook-pips"><span class="playbook-pip filled"></span><span class="playbook-pip filled"></span><span class="playbook-pip"></span></div></div>
-          <div class="playbook-toggle"></div>
-        </div>
-        <div class="playbook-detail">
-          <div class="playbook-hook">Stop answering the same question in Slack for the fifteenth time.</div>
-          <div class="playbook-outcome"><span>&rarr; You'll build:</span> an internal wiki with search, categories, and a simple way to add new articles.</div>
-          <div class="playbook-confidence">2&ndash;3 hours <span class="dot-sep"></span> Team leads, ops managers <span class="dot-sep"></span> Intermediate</div>
-        </div>
-      </div>
-      <div class="playbook-item" role="button" tabindex="0" aria-expanded="false">
-        <div class="playbook-header">
-          <div class="playbook-number">08</div>
-          <div><div class="playbook-name">Lead Scoring Prototype</div><div class="playbook-pips"><span class="playbook-pip filled"></span><span class="playbook-pip filled"></span><span class="playbook-pip"></span></div></div>
-          <div class="playbook-toggle"></div>
-        </div>
-        <div class="playbook-detail">
-          <div class="playbook-hook">Score your leads based on your own criteria. No expensive tool required.</div>
-          <div class="playbook-outcome"><span>&rarr; You'll build:</span> a scoring engine that reads your CSV, applies your rules, and outputs a ranked lead list.</div>
-          <div class="playbook-confidence">1&ndash;2 hours <span class="dot-sep"></span> Sales ops, revenue ops <span class="dot-sep"></span> Intermediate</div>
-        </div>
-      </div>
-      <div class="playbook-item" role="button" tabindex="0" aria-expanded="false">
-        <div class="playbook-header">
-          <div class="playbook-number">09</div>
-          <div><div class="playbook-name">Finance Tracker</div><div class="playbook-pips"><span class="playbook-pip filled"></span><span class="playbook-pip filled"></span><span class="playbook-pip"></span></div></div>
-          <div class="playbook-toggle"></div>
-        </div>
-        <div class="playbook-detail">
-          <div class="playbook-hook">Track your finances without giving your bank login to another app. Everything stays on your computer.</div>
-          <div class="playbook-outcome"><span>&rarr; You'll build:</span> a personal finance tracker with auto-categorization, charts, and actual-vs-target comparisons.</div>
-          <div class="playbook-confidence">1&ndash;2 hours <span class="dot-sep"></span> Anyone tracking finances <span class="dot-sep"></span> Intermediate</div>
-        </div>
-      </div>
-      <div class="playbook-item" role="button" tabindex="0" aria-expanded="false">
-        <div class="playbook-header">
-          <div class="playbook-number">10</div>
-          <div><div class="playbook-name">Email Campaign Builder</div><div class="playbook-pips"><span class="playbook-pip filled"></span><span class="playbook-pip"></span><span class="playbook-pip"></span></div></div>
-          <div class="playbook-toggle"></div>
-        </div>
-        <div class="playbook-detail">
-          <div class="playbook-hook">Plan and draft an entire email sequence with your brand voice. Subject lines, body copy, and CTAs &mdash; all five emails.</div>
-          <div class="playbook-outcome"><span>&rarr; You'll build:</span> a complete 5-email nurture sequence ready to paste into your email platform.</div>
-          <div class="playbook-confidence">20&ndash;30 minutes <span class="dot-sep"></span> Email marketers, demand gen <span class="dot-sep"></span> Easiest project</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════ AUTHOR ═══════ -->
-<section class="author-section" id="author">
-  <div class="author-inner">
-    <div class="author-avatar"><img src="./ofir-headshot.png?v=2" alt="Ofir Bloch" loading="lazy" decoding="async" width="192" height="192"></div>
+<header class="hero dotfield" id="top">
+  <div class="wrap hero-grid">
     <div>
-      <div class="author-name">Ofir Bloch</div>
-      <div class="author-role">SVP, Corporate Marketing</div>
-      <p class="author-bio">I'm a marketing executive, not an engineer. I wrote this guide because I wanted my team to stop waiting for dev resources and start building. But first, I had to stop waiting myself. This manual is what came out of that experiment, and if it can get a non-technical SVP to ship working tools, it can work for anyone.</p>
-      <div class="author-proof">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        Built 10+ internal tools for my team using the methods in this guide
+      <div class="micro rv">FREE FIELD MANUAL <span class="tick">//</span> 2026 EDITION <span class="tick">//</span> NO EMAIL GATE</div>
+      <h1 class="rv">You<br>outgrew the<br>chat window</h1>
+      <h2 class="rv">The field manual for turning Claude into dashboards, briefings, and working agents.</h2>
+      <p class="sub rv">Ten step-by-step playbooks across Claude Desktop, Cowork, and the terminal, written by an SVP who builds his own. Free PDF, instant download, no email.</p>
+      <div class="cta-row rv">
+        <a class="btn" href="/Claude_Code_Field_Manual.pdf" data-umami-event="download-hero">Download the PDF</a>
+        <a class="btn-ghost" href="#whats-inside">See what's inside</a>
       </div>
-      <div class="author-actions">
-        <a href="./Claude_Code_Field_Manual.pdf" class="author-cta" download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download Free PDF
-        </a>
-        <a href="https://www.linkedin.com/in/ofir-bloch/" target="_blank" rel="noopener" class="author-link">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          Follow on LinkedIn
-        </a>
+      <p class="cta-note rv" style="margin-top:16px">free <span style="color:var(--gray-mid)">//</span> 92 pages <span style="color:var(--gray-mid)">//</span> nothing to fill in</p>
+    </div>
+    <aside class="spec rv" aria-label="The three Claude surfaces covered in the manual">
+      <h3>PICK YOUR SURFACE</h3>
+      <div class="row"><span class="k">CLAUDE DESKTOP</span><span class="v">the app, zero setup</span></div>
+      <div class="row"><span class="k">COWORK</span><span class="v">your documents, automated</span></div>
+      <div class="row lit"><span class="k">TERMINAL</span><span class="v">where the author lives</span></div>
+      <div class="foot">THE MANUAL COVERS ALL THREE AND TELLS YOU WHEN EACH ONE WINS</div>
+    </aside>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat rv"><div class="n">92</div><div class="l">Pages</div></div>
+    <div class="stat rv"><div class="n">10</div><div class="l">Project Playbooks</div></div>
+    <div class="stat rv"><div class="n">3</div><div class="l">Claude Surfaces</div></div>
+    <div class="stat lit rv"><div class="n">0</div><div class="l">Email Gate</div></div>
+  </div>
+</div>
+
+<section class="who dotfield" id="who-this-is-for">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="micro">WHO THIS IS FOR</div>
+      <h2>Built for operators who <em>don't write code</em></h2>
+      <p>If you ever caught yourself thinking "I could build this myself," you are the reader.</p>
+    </div>
+    <div class="cards">
+      <div class="card rv">
+        <div class="tag">Marketing</div>
+        <blockquote>"We have six AI tools and I still can't get a dashboard that shows what I actually need."</blockquote>
+        <p>Build the <b>dashboards, landing pages, and competitive trackers</b> you want, in an afternoon and without a ticket.</p>
+      </div>
+      <div class="card rv">
+        <div class="tag">Operations &amp; CS</div>
+        <blockquote>"I manage 3x the accounts I had two years ago. My reporting process hasn't changed at all."</blockquote>
+        <p>Automate the <b>reports your team dreads</b>, build <b>FAQ bots</b> that match your real product, and keep a <b>team wiki</b> current without a maintainer.</p>
+      </div>
+      <div class="card rv">
+        <div class="tag">Sales &amp; Revenue</div>
+        <blockquote>"My CRM has 10,000 contacts. I still build my call list in a spreadsheet every morning."</blockquote>
+        <p>Build <b>lead scoring, pipeline trackers, and outreach generators</b> tuned to how your team sells.</p>
+      </div>
+      <div class="card rv">
+        <div class="tag">RevOps &amp; BizOps</div>
+        <blockquote>"I can see the problem in the data. I just can't build the fix without filing a Jira ticket."</blockquote>
+        <p>Connect your data, <b>build the fix you can already see</b>, and ship internal tools on your timeline.</p>
+      </div>
+      <div class="card wide rv">
+        <div class="tag">Non-technical execs &amp; team leads</div>
+        <p>You don't have to build anything. Read it to <b>understand what AI can ship today</b>, set honest expectations, and spot the use cases your team should grab first.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════ CTA BOTTOM ═══════ -->
-<section class="cta-bottom" id="cta-bottom">
-  <div class="cta-inner">
-    <h2>Your team doesn't need to wait for engineering.</h2>
-    <p>This guide shows you how to start building today &mdash; dashboards, websites, automations &mdash; with Claude Code. No coding. No permission needed. Just start.</p>
-    <a href="./Claude_Code_Field_Manual.pdf" class="btn btn-primary" download>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      Download Free PDF
-      <span class="btn-arrow">&rarr;</span>
-    </a>
-    <div class="cta-bottom-sub">Free PDF &bull; No email required &bull; 92 pages</div>
+<section class="inside" id="whats-inside">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="micro">WHAT'S INSIDE</div>
+      <h2>From "what is this thing" to <em>shipping real tools</em></h2>
+      <p>Six parts that build on each other. Each chapter is self-contained, jargon-free, and built to get you to a working result fast.</p>
+    </div>
+    <div class="parts">
+      <div class="part rv"><div class="num">01</div><h3>What Is This Thing?</h3><p>Claude vs Cowork vs Claude Code, and when to use each.</p></div>
+      <div class="part rv"><div class="num">02</div><h3>Start Here: Cowork</h3><p>Turn messy docs into clean reports without touching code.</p></div>
+      <div class="part rv"><div class="num">03</div><h3>Level Up: Claude Code Desktop</h3><p>Build websites, dashboards, and tools, then ship them.</p></div>
+      <div class="part rv"><div class="num">04</div><h3>Talking to Claude So It Actually Gets It</h3><p>Five prompting rules and the Interview-Plan-Build method.</p></div>
+      <div class="part rv"><div class="num">05</div><h3>The Safety Stuff</h3><p>Permissions, undo, and protecting your files.</p></div>
+      <div class="part rv"><div class="num">06</div><h3>When Things Go Wrong</h3><p>Hallucinations, how to verify output, and when to start over.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="midcta dotfield">
+  <div class="wrap">
+    <p class="big rv">92 pages, 10 playbooks, <em>zero code required</em></p>
+    <p class="small rv">The download takes two seconds and asks for nothing back.</p>
+    <a class="btn rv" href="/Claude_Code_Field_Manual.pdf" data-umami-event="download-mid">Download the PDF</a>
+  </div>
+</section>
+
+<section class="playbooks" id="playbooks">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="micro">INCLUDED</div>
+      <h2>10 copy-paste <em>project playbooks</em></h2>
+      <p>Real projects with exact prompts. Each playbook tells you who it's for, what you'll build, and how long it takes.</p>
+    </div>
+
+    <details class="pb rv"><summary><span class="idx">01</span><span class="t">Spreadsheet to Dashboard</span><span class="time">30-60 min</span><span class="chev">&gt;</span></summary>
+      <div class="body"><p>Your boss wants a dashboard. You have the data in Excel. Skip the six-week dev request.</p>
+      <p class="build"><b>YOU'LL BUILD:</b> a live dashboard with charts and filters your team can bookmark and check anytime.</p>
+      <p class="meta">FOR: marketing ops, sales ops, CS leads · LEVEL: beginner-friendly</p></div>
+    </details>
+    <details class="pb rv"><summary><span class="idx">02</span><span class="t">Marketing Website</span><span class="time">1-2 hrs</span><span class="chev">&gt;</span></summary>
+      <div class="body"><p>A professional site you control, without waiting for the web team.</p>
+      <p class="build"><b>YOU'LL BUILD:</b> a multi-page website (home, about, contact) you can deploy and share a real URL for.</p>
+      <p class="meta">FOR: marketing managers, founders · LEVEL: intermediate</p></div>
+    </details>
+    <details class="pb rv"><summary><span class="idx">03</span><span class="t">Monday Morning Report</span><span class="time">15 min first run</span><span class="chev">&gt;</span></summary>
+      <div class="body"><p>The report your boss reads every Monday, built automatically from your data. Saves 30-45 minutes a week.</p>
+      <p class="build"><b>YOU'LL BUILD:</b> a formatted executive summary that refreshes in minutes.</p>
+      <p class="meta">FOR: anyone reporting metrics · LEVEL: easiest project · 2 min after first run</p></div>
+    </details>
+    <details class="pb rv"><summary><span class="idx">04</span><span class="t">Competitive Intel Tracker</span><span class="time">45 min setup</span><span class="chev">&gt;</span></summary>
+      <div class="body"><p>Know what your competitors are doing. Organized, searchable, shareable.</p>
+      <p class="build"><b>YOU'LL BUILD:</b> a competitive intelligence spreadsheet you update monthly by dropping in new materials.</p>
+      <p class="meta">FOR: product marketing, strategy · LEVEL: beginner-friendly · 15 min monthly</p></div>
+    </details>
+    <details class="pb rv"><summary><span class="idx">05</span><span class="t">Customer FAQ Bot</span><span class="time">3-5 hrs</span><span class="chev">&gt;</span></summary>
+      <div class="body"><p>A chatbot that answers from your documentation and admits when it doesn't know.</p>
+      <p class="build"><b>YOU'LL BUILD:</b> a chat widget that searches your docs, cites sources, and says "I don't know" when it should.</p>
+      <p class="meta">FOR: customer success, support · LEVEL: most complex, most valuable</p></div>
+    </details>
+    <details class="pb rv"><summary><span class="idx">06</span><span class="t">Event Landing Page</span><span class="time">1-2 hrs</span><span class="chev">&gt;</span></summary>
+      <div class="body"><p>A page for your next webinar, conference, or product launch. Live by the end of the day.</p>
+      <p class="build"><b>YOU'LL BUILD:</b> a landing page with countdown timer, speaker bios, and a working registration form.</p>
+      <p class="meta">FOR: event marketers, demand gen · LEVEL: intermediate</p></div>
+    </details>
+    <details class="pb rv"><summary><span class="idx">07</span><span class="t">Team Wiki / Knowledge Base</span><span class="time">2-3 hrs</span><span class="chev">&gt;</span></summary>
+      <div class="body"><p>Stop answering the same question in Slack for the fifteenth time.</p>
+      <p class="build"><b>YOU'LL BUILD:</b> an internal wiki with search, categories, and a simple way to add new articles.</p>
+      <p class="meta">FOR: team leads, ops managers · LEVEL: intermediate</p></div>
+    </details>
+    <details class="pb rv"><summary><span class="idx">08</span><span class="t">Lead Scoring Prototype</span><span class="time">1-2 hrs</span><span class="chev">&gt;</span></summary>
+      <div class="body"><p>Score your leads on your own criteria. No expensive tool required.</p>
+      <p class="build"><b>YOU'LL BUILD:</b> a scoring engine that reads your CSV, applies your rules, and outputs a ranked lead list.</p>
+      <p class="meta">FOR: sales ops, revenue ops · LEVEL: intermediate</p></div>
+    </details>
+    <details class="pb rv"><summary><span class="idx">09</span><span class="t">Finance Tracker</span><span class="time">1-2 hrs</span><span class="chev">&gt;</span></summary>
+      <div class="body"><p>Track your finances without giving your bank login to another app. Everything stays on your computer.</p>
+      <p class="build"><b>YOU'LL BUILD:</b> a personal finance tracker with auto-categorization, charts, and actual-vs-target comparisons.</p>
+      <p class="meta">FOR: anyone tracking finances · LEVEL: intermediate</p></div>
+    </details>
+    <details class="pb rv"><summary><span class="idx">10</span><span class="t">Email Campaign Builder</span><span class="time">20-30 min</span><span class="chev">&gt;</span></summary>
+      <div class="body"><p>Plan and draft an entire email sequence in your brand voice: subject lines, body copy, and CTAs for all five emails.</p>
+      <p class="build"><b>YOU'LL BUILD:</b> a complete 5-email nurture sequence ready to paste into your email platform.</p>
+      <p class="meta">FOR: email marketers, demand gen · LEVEL: easiest project</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="author" id="author">
+  <div class="wrap author-grid">
+    <img src="ofir-headshot.png" alt="Ofir Bloch" class="rv">
+    <div>
+      <div class="micro rv">THE AUTHOR</div>
+      <h3 class="rv">Ofir Bloch</h3>
+      <div class="role rv">SVP, Corporate Marketing</div>
+      <p class="rv">I run corporate marketing at an SAP company, and the systems in this manual are the ones I actually run: <b>the morning briefing, the dashboards, the agents</b>.</p>
+      <p class="rv">I work mostly in the terminal because it's the fastest interface I've used. The manual shows the same builds in <b>Claude Desktop and Cowork</b> and tells you which surface to pick for the job.</p>
+      <p class="rv">Every playbook started as a build I ran myself.</p>
+      <div class="links rv">
+        <a class="btn" href="/Claude_Code_Field_Manual.pdf" data-umami-event="download-author">Download the PDF</a>
+        <a class="btn-ghost" href="https://www.linkedin.com/in/ofirbloch/" target="_blank" rel="noopener">Follow on LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bottom dotfield" id="cta-bottom">
+  <div class="wrap">
+    <h2 class="rv">Build the first<br>one this weekend</h2>
+    <p class="rv">Start with playbook 03, the Monday morning report. Fifteen minutes for the first run, and the rest get easier from there.</p>
+    <a class="btn rv" href="/Claude_Code_Field_Manual.pdf" data-umami-event="download-bottom">Download the PDF</a>
+    <p class="cta-note rv" style="margin-top:18px">free <span style="color:var(--gray-mid)">//</span> 92 pages <span style="color:var(--gray-mid)">//</span> no email</p>
   </div>
 </section>
 
 <footer>
-  &copy; 2026 <a href="https://www.linkedin.com/in/ofir-bloch/" target="_blank" rel="noopener">Ofir Bloch</a>. All rights reserved. &nbsp;&bull;&nbsp; Ofir's Claude Code Field Manual
+  <div class="wrap">
+    <span>© 2026 OFIR BLOCH</span>
+    <span><a href="https://www.linkedin.com/in/ofirbloch/" target="_blank" rel="noopener">LINKEDIN</a></span>
+  </div>
 </footer>
 
-<!-- ═══════ STICKY MOBILE CTA ═══════ -->
-<div class="sticky-cta">
-  <a href="./Claude_Code_Field_Manual.pdf" class="btn btn-primary" download>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-    Download Free PDF &rarr;
-  </a>
-</div>
-
 <script>
-/* ── Playbook accordion ── */
-function togglePlaybook(el) {
-  var expanded = el.getAttribute('aria-expanded') === 'true';
-  el.setAttribute('aria-expanded', !expanded);
-  updateToggleAllLabel();
-}
-function toggleAllPlaybooks() {
-  var items = document.querySelectorAll('#playbookList .playbook-item');
-  var anyOpen = Array.from(items).some(function(i) { return i.getAttribute('aria-expanded') === 'true'; });
-  items.forEach(function(i) { i.setAttribute('aria-expanded', !anyOpen); });
-  updateToggleAllLabel();
-  track('click_expand_all', { state: anyOpen ? 'collapsed' : 'expanded' });
-}
-function updateToggleAllLabel() {
-  var items = document.querySelectorAll('#playbookList .playbook-item');
-  var anyOpen = Array.from(items).some(function(i) { return i.getAttribute('aria-expanded') === 'true'; });
-  var btn = document.getElementById('toggleAll');
-  if (btn) btn.querySelector('span').textContent = anyOpen ? 'Collapse All' : 'Expand All';
-}
-
-/* Event delegation for playbook clicks */
-document.getElementById('playbookList').addEventListener('click', function(e) {
-  var item = e.target.closest('.playbook-item');
-  if (item) togglePlaybook(item);
-});
-document.getElementById('toggleAll').addEventListener('click', toggleAllPlaybooks);
-
-/* Keyboard support for playbook items */
-document.addEventListener('keydown', function(e) {
-  if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('playbook-item')) {
-    e.preventDefault();
-    togglePlaybook(e.target);
-  }
-});
-
-/* ── Analytics helper ── */
-function track(name, data) {
-  if (typeof umami !== 'undefined') {
-    umami.track(name, data);
-  }
-}
-
-/* ── Download tracking ── */
-document.querySelectorAll('a[download]').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    var label = btn.closest('.hero') ? 'hero' :
-                btn.closest('.mid-cta') ? 'mid_cta' :
-                btn.closest('.author-section') ? 'author' :
-                btn.closest('.cta-bottom') ? 'bottom_cta' :
-                btn.closest('.sticky-cta') ? 'sticky' : 'unknown';
-    track('download_manual', { location: label });
-  });
-});
-
-/* ── Sticky CTA: show after scrolling past hero CTA ── */
-(function() {
-  var stickyCta = document.querySelector('.sticky-cta');
-  var heroActions = document.querySelector('.hero-actions');
-  if (!stickyCta || !heroActions) return;
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        stickyCta.classList.remove('visible');
-      } else {
-        stickyCta.classList.add('visible');
-      }
-    });
-  }, { threshold: 0 });
-  observer.observe(heroActions);
-})();
-
-/* ── Scroll depth tracking ── */
-(function() {
-  var depths = [25, 50, 75, 100];
-  var fired = {};
-  window.addEventListener('scroll', function() {
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    if (docHeight <= 0) return;
-    var pct = Math.round((scrollTop / docHeight) * 100);
-    depths.forEach(function(d) {
-      if (pct >= d && !fired[d]) {
-        fired[d] = true;
-        track('scroll_depth', { depth: d + '%' });
-      }
-    });
-  }, { passive: true });
-})();
-
-/* ── Section visibility tracking ── */
-(function() {
-  var sections = [
-    { id: 'who-this-is-for', name: 'who_this_is_for' },
-    { id: 'whats-inside', name: 'whats_inside' },
-    { id: 'playbooks', name: 'playbooks' },
-    { id: 'author', name: 'author' },
-    { id: 'cta-bottom', name: 'bottom_cta' }
-  ];
-  if (!('IntersectionObserver' in window)) return;
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        var sec = sections.find(function(s) { return s.id === entry.target.id; });
-        if (sec) {
-          track('section_view', { section: sec.name });
-          observer.unobserve(entry.target);
-        }
-      }
-    });
-  }, { threshold: 0.3 });
-  sections.forEach(function(s) {
-    var el = document.getElementById(s.id);
-    if (el) observer.observe(el);
-  });
-})();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%6)*60+'ms';io.observe(el)});
 </script>
 </body>
 </html>
-
