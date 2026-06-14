@@ -68,13 +68,14 @@ img{max-width:100%;display:block}
 .toplink:hover{border-color:var(--lime);background:rgba(211,252,8,.06)}
 
 /* hero */
-.hero{padding:96px 0 80px;border-bottom:1px solid var(--gray-dark);overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:0;align-items:center;min-height:380px}
+.hero{padding:80px 0 64px;border-bottom:1px solid var(--gray-dark);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:0;align-items:center}
 .hero-left{padding-right:48px}
 h1{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--lime);
-  font-size:clamp(56px,9vw,118px);line-height:.94;letter-spacing:.005em;margin:20px 0 36px;
+  font-size:clamp(52px,8.5vw,118px);line-height:.94;letter-spacing:.005em;margin:16px 0 24px;
   text-shadow:0 0 38px rgba(207,255,0,.14)}
-.cta-row{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.hero-sub{font-size:clamp(16px,1.6vw,20px);color:var(--gray-hi);max-width:520px;margin-bottom:32px;line-height:1.55}
+.cta-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
 .btn{display:inline-block;font-family:var(--mono);font-size:14px;letter-spacing:.08em;text-transform:uppercase;
   background:var(--lime);color:var(--bg);padding:18px 30px;font-weight:500;
   box-shadow:0 0 24px rgba(143,182,0,.32);transition:transform .15s,box-shadow .2s}
@@ -176,16 +177,23 @@ footer a:hover{color:var(--lime)}
 .hero .rv{transition-duration:.8s}
 
 @media(max-width:900px){
+  .hero{padding:52px 0 48px}
   .hero-grid{grid-template-columns:1fr;gap:0}
   .hero-left{padding-right:0}
   .hero-img-wrap{display:none}
   .stats .wrap{grid-template-columns:repeat(2,1fr)}
   .stat{border-left:none;border-top:1px solid var(--gray-dark)}
+  .stat:nth-child(-n+2){border-top:none}
+  .stat:nth-child(odd){border-left:none}
+  .roles-strip .rl{display:none}
   .cards{grid-template-columns:1fr}
   .parts{grid-template-columns:1fr}
   .author-grid{grid-template-columns:1fr}
+  .pb summary{flex-wrap:wrap;gap:10px}
+  .pb .time{display:none}
   .pb .body{padding-left:26px}
-  section{padding:56px 0}
+  section{padding:52px 0}
+  .bottom{padding:80px 0}
 }
 </style>
 </head>
@@ -203,6 +211,7 @@ footer a:hover{color:var(--lime)}
     <div class="hero-left">
       <div class="micro rv">FREE <span class="tick">·</span> 2026 EDITION <span class="tick">·</span> NO EMAIL GATE</div>
       <h1 class="rv">You<br>outgrew the<br>chat window</h1>
+      <p class="hero-sub rv">Ofir Bloch's field manual for using Claude. Ten real project playbooks, no code required. Free PDF.</p>
       <div class="cta-row rv">
         <a class="btn" href="/Claude_Code_Field_Manual.pdf" data-umami-event="download-hero">Download the PDF</a>
         <a class="btn-ghost" href="#whats-inside">See what's inside</a>
