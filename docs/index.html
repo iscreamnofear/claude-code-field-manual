@@ -162,9 +162,9 @@ section{padding:80px 0}
 .author .links{display:flex;gap:26px;align-items:center}
 
 /* bottom cta */
-.bottom{text-align:center;padding:120px 0}
+.bottom{padding:0;text-align:left;overflow:hidden}
 .bottom h2{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(40px,6vw,76px);line-height:1;color:var(--lime);margin-bottom:18px;text-shadow:0 0 38px rgba(207,255,0,.14)}
-.bottom p{color:var(--gray-hi);max-width:560px;margin:0 auto 38px}
+.bottom p{color:var(--gray-hi);max-width:520px;margin:0 0 38px}
 .cta-note{font-family:var(--mono);font-size:12px;color:var(--gray-hi);letter-spacing:.06em}
 
 /* footer */
@@ -194,12 +194,30 @@ footer a:hover{color:var(--lime)}
   .pb .time{display:none}
   .pb .body{padding-left:26px}
   section{padding:52px 0}
-  .bottom{padding:80px 0}
+  .cta-grid{display:block;min-height:0}
+  .cta-img-col{display:none}
+  .cta-text-col{padding:64px 24px;text-align:center}
+  .bottom{text-align:center}
+  .bottom p{margin:0 auto 38px}
+  .editorial-strip img{height:200px}
 }
 @media(max-width:600px){
   .parts{grid-template-columns:1fr}
   .hero-sub{font-size:16px}
 }
+
+/* persona card illustration headers */
+.card-img{width:100%;height:168px;object-fit:cover;object-position:center;display:block;border-bottom:1px solid var(--gray-dark);margin-bottom:20px}
+
+/* editorial section break strip */
+.editorial-strip{border-bottom:1px solid var(--gray-dark);line-height:0;overflow:hidden}
+.editorial-strip img{width:100%;height:310px;object-fit:cover;object-position:center;opacity:.68;display:block}
+
+/* bottom cta: two-column editorial layout */
+.cta-grid{display:grid;grid-template-columns:38% 1fr;align-items:stretch;min-height:500px}
+.cta-img-col{position:relative;overflow:hidden;border-right:1px solid var(--gray-dark)}
+.cta-img-col img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.88}
+.cta-text-col{padding:72px 56px 64px 64px;display:flex;flex-direction:column;justify-content:center}
 </style>
 </head>
 <body>
@@ -259,14 +277,17 @@ footer a:hover{color:var(--lime)}
     </div>
     <div class="cards">
       <div class="card rv">
+        <img src="/card-marketing.png" class="card-img" alt="" aria-hidden="true">
         <div class="tag">Marketing</div>
         <p>Build the dashboards, trackers, and landing pages you want, in an afternoon, without a ticket.</p>
       </div>
       <div class="card rv">
+        <img src="/card-ops.png" class="card-img" alt="" aria-hidden="true">
         <div class="tag">Ops, CS &amp; Revenue</div>
         <p>Automate the reports your team dreads, build FAQ bots that match your real product, keep your wiki current.</p>
       </div>
       <div class="card rv">
+        <img src="/card-execs.png" class="card-img" alt="" aria-hidden="true">
         <div class="tag">Execs &amp; Team Leads</div>
         <p>Know what AI can actually ship today. Set honest expectations. Spot the use cases your team should grab first.</p>
       </div>
@@ -290,6 +311,10 @@ footer a:hover{color:var(--lime)}
     </div>
   </div>
 </section>
+
+<div class="editorial-strip" aria-hidden="true">
+  <img src="/divider-strip.png" alt="">
+</div>
 
 <section class="playbooks" id="playbooks">
   <div class="wrap">
@@ -369,11 +394,16 @@ footer a:hover{color:var(--lime)}
 </section>
 
 <section class="bottom dotfield" id="cta-bottom">
-  <div class="wrap">
-    <h2 class="rv">Build the first<br>one this weekend</h2>
-    <p class="rv">Start with playbook 03, the Monday morning report. Fifteen minutes for the first run, and the rest get easier from there.</p>
-    <a class="btn rv" href="/Claude_Code_Field_Manual.pdf" data-umami-event="download-bottom">Download the PDF</a>
-    <p class="cta-note rv" style="margin-top:18px">free <span style="color:var(--gray-mid)">//</span> 92 pages <span style="color:var(--gray-mid)">//</span> no email</p>
+  <div class="cta-grid">
+    <div class="cta-img-col" aria-hidden="true">
+      <img src="/cta-portrait.png" alt="">
+    </div>
+    <div class="cta-text-col">
+      <h2 class="rv">Build the first<br>one this weekend</h2>
+      <p class="rv">Start with playbook 03, the Monday morning report. Fifteen minutes for the first run, and the rest get easier from there.</p>
+      <a class="btn rv" href="/Claude_Code_Field_Manual.pdf" data-umami-event="download-bottom">Download the PDF</a>
+      <p class="cta-note rv" style="margin-top:18px">free <span style="color:var(--gray-mid)">//</span> 92 pages <span style="color:var(--gray-mid)">//</span> no email</p>
+    </div>
   </div>
 </section>
 
