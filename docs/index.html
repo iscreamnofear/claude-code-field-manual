@@ -68,9 +68,12 @@ img{max-width:100%;display:block}
 .toplink:hover{border-color:var(--lime);background:rgba(211,252,8,.06)}
 
 /* hero */
-.hero{padding:80px 0 64px;border-bottom:1px solid var(--gray-dark);overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:0;align-items:center}
-.hero-left{padding-right:48px}
+.hero{padding:0;border-bottom:1px solid var(--gray-dark);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr 38%;align-items:stretch;min-height:500px}
+.hero-left{
+  padding:72px 56px 64px max(24px, calc((100vw - 1140px) / 2 + 24px));
+  display:flex;flex-direction:column;justify-content:center;
+}
 h1{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--lime);
   font-size:clamp(52px,8.5vw,118px);line-height:.94;letter-spacing:.005em;margin:16px 0 24px;
   text-shadow:0 0 38px rgba(207,255,0,.14)}
@@ -85,10 +88,10 @@ h1{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var
 .cta-note{font-family:var(--mono);font-size:12px;color:var(--gray-hi);letter-spacing:.06em;margin-top:18px}
 
 /* hero image */
-.hero-img-wrap{position:relative;overflow:hidden;height:100%;min-height:340px}
+.hero-img-wrap{position:relative;overflow:hidden}
 .hero-img-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.8}
 .hero-img-wrap::before{content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(to right, var(--bg) 0%, transparent 35%)}
+  background:linear-gradient(to right, var(--bg) 0%, transparent 40%)}
 
 /* stats strip */
 .stats{border-bottom:1px solid var(--gray-dark)}
@@ -176,24 +179,26 @@ footer a:hover{color:var(--lime)}
 .rv.on{opacity:1;transform:none}
 .hero .rv{transition-duration:.8s}
 
-@media(max-width:900px){
-  .hero{padding:52px 0 48px}
-  .hero-grid{grid-template-columns:1fr;gap:0}
-  .hero-left{padding-right:0}
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;min-height:0}
+  .hero-left{padding:52px 24px 48px}
   .hero-img-wrap{display:none}
   .stats .wrap{grid-template-columns:repeat(2,1fr)}
   .stat{border-left:none;border-top:1px solid var(--gray-dark)}
   .stat:nth-child(-n+2){border-top:none}
-  .stat:nth-child(odd){border-left:none}
   .roles-strip .rl{display:none}
   .cards{grid-template-columns:1fr}
-  .parts{grid-template-columns:1fr}
+  .parts{grid-template-columns:repeat(2,1fr)}
   .author-grid{grid-template-columns:1fr}
   .pb summary{flex-wrap:wrap;gap:10px}
   .pb .time{display:none}
   .pb .body{padding-left:26px}
   section{padding:52px 0}
   .bottom{padding:80px 0}
+}
+@media(max-width:600px){
+  .parts{grid-template-columns:1fr}
+  .hero-sub{font-size:16px}
 }
 </style>
 </head>
@@ -207,7 +212,7 @@ footer a:hover{color:var(--lime)}
 </div>
 
 <header class="hero dotfield" id="top">
-  <div class="wrap hero-grid">
+  <div class="hero-grid">
     <div class="hero-left">
       <div class="micro rv">FREE <span class="tick">·</span> 2026 EDITION <span class="tick">·</span> NO EMAIL GATE</div>
       <h1 class="rv">You<br>outgrew the<br>chat window</h1>
