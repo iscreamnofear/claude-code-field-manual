@@ -3,20 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Claude Code Field Manual by Ofir Bloch | Free 92-Page Guide for Operators</title>
-<meta name="description" content="You outgrew the chat window. A free 92-page field manual with 10 playbooks for building dashboards, briefings, and agents with Claude Desktop, Cowork, and the terminal. No email.">
-<meta property="og:title" content="You outgrew the chat window">
-<meta property="og:description" content="The field manual for turning Claude into dashboards, briefings, and working agents. 92 pages, 10 playbooks, free, no email.">
+<title>Claude Code Field Manual — Free 92-Page Guide for Operators</title>
+<meta name="description" content="A free 92-page field manual for using Claude Code without writing code. 10 real project playbooks: dashboards, briefings, agents. No email required.">
+<meta property="og:title" content="Claude Code Field Manual by Ofir Bloch">
+<meta property="og:description" content="The field manual for turning Claude Code into dashboards, briefings, and working agents. 92 pages, 10 playbooks, free, no email.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://manual.ofirbloch.com">
 <meta property="og:image" content="https://manual.ofirbloch.com/images/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="You outgrew the chat window. The Claude Code Field Manual.">
+<meta property="og:image:alt" content="Claude Code Field Manual by Ofir Bloch — free guide for non-developer operators.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="You outgrew the chat window">
-<meta name="twitter:description" content="The field manual for turning Claude into dashboards, briefings, and working agents. 92 pages, 10 playbooks, free, no email.">
+<meta name="twitter:title" content="Claude Code Field Manual by Ofir Bloch">
+<meta name="twitter:description" content="92 pages, 10 playbooks, 0 code required. Free download, no email.">
 <meta name="twitter:image" content="https://manual.ofirbloch.com/images/og-card.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Claude Code Field Manual",
+  "author": {"@type": "Person", "name": "Ofir Bloch", "url": "https://www.linkedin.com/in/ofirbloch/"},
+  "url": "https://manual.ofirbloch.com",
+  "description": "A field manual for using Claude Code without writing code. 10 real project playbooks for operators, marketers, and executives.",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "numberOfPages": 92
+}
+</script>
 <link rel="canonical" href="https://manual.ofirbloch.com/">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32">
@@ -25,7 +38,8 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 <!-- Umami Analytics (cloud.umami.is) -->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="a87a3b4e-5f12-4149-8660-a4b44c40100a"></script>
 <style>
@@ -164,7 +178,9 @@ section{padding:80px 0}
 .author .links{display:flex;gap:26px;align-items:center}
 
 /* bottom cta */
-.bottom{padding:0;text-align:left;overflow:hidden}
+.bottom{padding:0;text-align:center;overflow:hidden}
+.cta-centered{padding:96px 24px 108px;max-width:680px;margin:0 auto}
+.cta-centered p{color:var(--gray-hi);max-width:480px;margin:0 auto 38px}
 .bottom h2{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(40px,6vw,76px);line-height:1;color:var(--lime);margin-bottom:18px;text-shadow:0 0 38px rgba(207,255,0,.14)}
 .bottom p{color:var(--gray-hi);max-width:520px;margin:0 0 38px}
 .cta-note{font-family:var(--mono);font-size:12px;color:var(--gray-hi);letter-spacing:.06em}
@@ -217,8 +233,9 @@ footer a:hover{color:var(--lime)}
 .who-img img{width:100%;display:block;opacity:.84}
 
 /* editorial section break strip */
-.editorial-strip{border-bottom:1px solid var(--gray-dark);line-height:0;overflow:hidden}
-.editorial-strip img{width:100%;height:310px;object-fit:cover;object-position:center;opacity:.68;display:block}
+.section-break{display:flex;align-items:center;padding:0 24px;margin:0}
+.section-break-line{flex:1;height:1px;background:var(--gray-dark)}
+.section-break-mark{width:7px;height:7px;background:var(--lime);transform:rotate(45deg);margin:0 20px;flex-shrink:0;box-shadow:0 0 12px rgba(211,252,8,.4)}
 
 /* bottom cta: two-column editorial layout */
 .cta-grid{display:grid;grid-template-columns:38% 1fr;align-items:stretch;min-height:500px}
@@ -243,13 +260,13 @@ footer a:hover{color:var(--lime)}
       <h1 class="rv">You<br>outgrew the<br>chat window</h1>
       <p class="hero-sub rv">Ofir Bloch's field manual for using Claude. Ten real project playbooks, no code required. Free PDF.</p>
       <div class="cta-row rv">
-        <a class="btn" href="/Claude_Code_Field_Manual.pdf" data-umami-event="download-hero">Download the PDF</a>
+        <a class="btn" href="/Claude_Code_Field_Manual.pdf" data-umami-event="download-hero">Download the PDF <span style="font-size:.75em;opacity:.7;font-family:var(--mono);font-weight:400">19 MB</span></a>
         <a class="btn-ghost" href="#whats-inside">See what's inside</a>
       </div>
       <p class="cta-note rv">free <span style="color:var(--gray-mid)">//</span> 92 pages <span style="color:var(--gray-mid)">//</span> nothing to fill in</p>
     </div>
     <div class="hero-img-wrap rv" aria-hidden="true">
-      <img src="/hero-iso.png" alt="">
+      <img src="/hero-iso.png" alt="" fetchpriority="high">
     </div>
   </div>
 </header>
@@ -284,7 +301,7 @@ footer a:hover{color:var(--lime)}
         <h2>Built for operators who <em>don't write code</em></h2>
       </div>
       <div class="who-img rv">
-        <img src="/who-iso.png" alt="Isometric illustration of an operator workstation">
+        <img src="/who-iso.png" alt="Isometric illustration of an operator workstation" loading="lazy">
       </div>
     </div>
     <div class="cards">
@@ -331,7 +348,7 @@ footer a:hover{color:var(--lime)}
           </svg>
         </div>
         <div class="tag">Execs &amp; Team Leads</div>
-        <p>Know what AI can actually ship today. Set honest expectations. Spot the use cases your team should grab first.</p>
+        <p>Understand what AI can actually ship today, set honest expectations with your team, and identify the use cases worth prioritizing now.</p>
       </div>
     </div>
   </div>
@@ -354,8 +371,10 @@ footer a:hover{color:var(--lime)}
   </div>
 </section>
 
-<div class="editorial-strip" aria-hidden="true">
-  <img src="/divider-strip.png" alt="">
+<div class="section-break" aria-hidden="true">
+  <div class="section-break-line"></div>
+  <div class="section-break-mark"></div>
+  <div class="section-break-line"></div>
 </div>
 
 <section class="playbooks" id="playbooks">
@@ -419,6 +438,15 @@ footer a:hover{color:var(--lime)}
   </div>
 </section>
 
+<section class="bottom dotfield" id="cta-bottom">
+  <div class="cta-centered">
+    <h2 class="rv">Build the first<br>one this weekend</h2>
+    <p class="rv">Start with playbook 03, the Monday morning report. Fifteen minutes for the first run, and the rest get easier from there.</p>
+    <a class="btn rv" href="/Claude_Code_Field_Manual.pdf" data-umami-event="download-bottom">Download the PDF</a>
+    <p class="cta-note rv" style="margin-top:18px">free <span style="color:var(--gray-mid)">//</span> 92 pages <span style="color:var(--gray-mid)">//</span> no email</p>
+  </div>
+</section>
+
 <section class="author" id="author">
   <div class="wrap author-grid">
     <img src="ofir-headshot.png" alt="Ofir Bloch" class="rv">
@@ -426,25 +454,10 @@ footer a:hover{color:var(--lime)}
       <div class="micro rv">THE AUTHOR</div>
       <h3 class="rv">Ofir Bloch</h3>
       <div class="role rv">SVP, Corporate Marketing</div>
-      <p class="rv">I run corporate marketing at an SAP company. The systems in this manual are the ones I actually run: <b>the morning briefing, the dashboards, the agents</b>. Every playbook started as a build I ran myself.</p>
+      <p class="rv">SVP Corporate Marketing at WalkMe, an SAP company. Co-authored two books with Wiley. The systems in this manual are the ones I actually run: <b>the morning briefing, the dashboards, the agents</b>. Every playbook started as a real build inside a real marketing org.</p>
       <div class="links rv">
-        <a class="btn" href="/Claude_Code_Field_Manual.pdf" data-umami-event="download-author">Download the PDF</a>
         <a class="btn-ghost" href="https://www.linkedin.com/in/ofirbloch/" target="_blank" rel="noopener">Follow on LinkedIn</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="bottom dotfield" id="cta-bottom">
-  <div class="cta-grid">
-    <div class="cta-img-col" aria-hidden="true">
-      <img src="/cta-portrait.png" alt="">
-    </div>
-    <div class="cta-text-col">
-      <h2 class="rv">Build the first<br>one this weekend</h2>
-      <p class="rv">Start with playbook 03, the Monday morning report. Fifteen minutes for the first run, and the rest get easier from there.</p>
-      <a class="btn rv" href="/Claude_Code_Field_Manual.pdf" data-umami-event="download-bottom">Download the PDF</a>
-      <p class="cta-note rv" style="margin-top:18px">free <span style="color:var(--gray-mid)">//</span> 92 pages <span style="color:var(--gray-mid)">//</span> no email</p>
     </div>
   </div>
 </section>
