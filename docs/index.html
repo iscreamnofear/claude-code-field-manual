@@ -144,10 +144,19 @@ section{padding:80px 0}
 /* inside parts */
 .inside{border-bottom:1px solid var(--gray-dark)}
 .parts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gray-dark);border:1px solid var(--gray-dark)}
-.part{background:var(--bg);padding:28px 30px;transition:background .2s}
+.part{background:var(--bg);padding:28px 30px;transition:background .2s;cursor:pointer;user-select:none}
 .part:hover{background:var(--crush)}
+.part.open{background:var(--crush)}
+.part-head{display:flex;justify-content:space-between;align-items:flex-start}
 .part .num{font-family:var(--display);font-size:28px;color:var(--gray-mid);line-height:1}
 .part h3{font-family:var(--body);font-weight:700;font-size:16px;margin-top:10px;color:var(--ink);line-height:1.4}
+.part-indicator{font-family:var(--mono);font-size:18px;color:var(--gray-mid);line-height:1;transition:transform .25s ease;flex-shrink:0;margin-top:4px}
+.part.open .part-indicator{transform:rotate(45deg);color:var(--lime)}
+.part-body{max-height:0;overflow:hidden;transition:max-height .35s ease,opacity .3s ease;opacity:0}
+.part.open .part-body{max-height:160px;opacity:1}
+.part-body-inner{display:flex;gap:18px;align-items:flex-start;padding-top:18px;margin-top:18px;border-top:1px solid var(--gray-dark)}
+.part-icon{flex-shrink:0;opacity:.9}
+.part-desc{font-family:var(--body);font-size:13px;color:var(--gray-hi);line-height:1.65;margin:0}
 
 /* playbooks */
 .playbooks{border-bottom:1px solid var(--gray-dark)}
@@ -361,12 +370,85 @@ footer a:hover{color:var(--lime)}
       <h2>From "what is this thing" to <em>shipping real tools</em></h2>
     </div>
     <div class="parts">
-      <div class="part rv"><div class="num">01</div><h3>What Is This Thing?</h3></div>
-      <div class="part rv"><div class="num">02</div><h3>Start Here: Cowork</h3></div>
-      <div class="part rv"><div class="num">03</div><h3>Level Up: Claude Code Desktop</h3></div>
-      <div class="part rv"><div class="num">04</div><h3>Talking to Claude So It Actually Gets It</h3></div>
-      <div class="part rv"><div class="num">05</div><h3>The Safety Stuff</h3></div>
-      <div class="part rv"><div class="num">06</div><h3>When Things Go Wrong</h3></div>
+
+      <div class="part rv" onclick="togglePart(this)">
+        <div class="part-head">
+          <div><div class="num">01</div><h3>What Is This Thing?</h3></div>
+          <span class="part-indicator">+</span>
+        </div>
+        <div class="part-body"><div class="part-body-inner">
+          <svg class="part-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#D3FC08" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 5a9 9 0 0 1 6 15.5V23H12v-2.5A9 9 0 0 1 18 5z"/><line x1="14" y1="27" x2="22" y2="27"/><line x1="15.5" y1="31" x2="20.5" y2="31"/>
+          </svg>
+          <p class="part-desc">Claude Code reads your files, writes code, and runs commands. This part explains why it works differently from ChatGPT and how to stop fighting it.</p>
+        </div></div>
+      </div>
+
+      <div class="part rv" onclick="togglePart(this)">
+        <div class="part-head">
+          <div><div class="num">02</div><h3>Start Here: Cowork</h3></div>
+          <span class="part-indicator">+</span>
+        </div>
+        <div class="part-body"><div class="part-body-inner">
+          <svg class="part-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#D3FC08" stroke-width="1.5" stroke-linecap="round">
+            <rect x="4" y="11" width="28" height="19" rx="2"/><path d="M4 16h28"/><rect x="8" y="7" width="10" height="6" rx="1"/>
+          </svg>
+          <p class="part-desc">No terminal required. Cowork is the browser tab where most operators start. Permission modes, your first three builds, and what actually matters.</p>
+        </div></div>
+      </div>
+
+      <div class="part rv" onclick="togglePart(this)">
+        <div class="part-head">
+          <div><div class="num">03</div><h3>Level Up: Claude Code Desktop</h3></div>
+          <span class="part-indicator">+</span>
+        </div>
+        <div class="part-body"><div class="part-body-inner">
+          <svg class="part-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#D3FC08" stroke-width="1.5" stroke-linecap="round">
+            <rect x="4" y="8" width="28" height="20" rx="2"/><path d="M10 17l5 4-5 4"/><line x1="18" y1="25" x2="26" y2="25"/>
+          </svg>
+          <p class="part-desc">Project memory, custom agents, scheduled tasks. When to upgrade from Cowork, what changes, and how to set up the features that make Claude feel like a team member.</p>
+        </div></div>
+      </div>
+
+      <div class="part rv" onclick="togglePart(this)">
+        <div class="part-head">
+          <div><div class="num">04</div><h3>Talking to Claude So It Actually Gets It</h3></div>
+          <span class="part-indicator">+</span>
+        </div>
+        <div class="part-body"><div class="part-body-inner">
+          <svg class="part-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#D3FC08" stroke-width="1.5" stroke-linecap="round">
+            <path d="M4 8h28v17H20l-6 5v-5H4z"/><line x1="10" y1="14" x2="26" y2="14"/><line x1="10" y1="19" x2="20" y2="19"/>
+          </svg>
+          <p class="part-desc">What you get back tracks the quality of your brief. Five rules, one kickoff skeleton, and the interview technique that works on every task type.</p>
+        </div></div>
+      </div>
+
+      <div class="part rv" onclick="togglePart(this)">
+        <div class="part-head">
+          <div><div class="num">05</div><h3>The Safety Stuff</h3></div>
+          <span class="part-indicator">+</span>
+        </div>
+        <div class="part-body"><div class="part-body-inner">
+          <svg class="part-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#D3FC08" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 4l12 5v9c0 7-5 12-12 14C11 30 6 25 6 18V9z"/><path d="M13 18l3 3 7-7"/>
+          </svg>
+          <p class="part-desc">What Claude can and can't touch, how to review before it runs, and what to do when it surprises you. Enough to work confidently without being paranoid.</p>
+        </div></div>
+      </div>
+
+      <div class="part rv" onclick="togglePart(this)">
+        <div class="part-head">
+          <div><div class="num">06</div><h3>When Things Go Wrong</h3></div>
+          <span class="part-indicator">+</span>
+        </div>
+        <div class="part-body"><div class="part-body-inner">
+          <svg class="part-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#D3FC08" stroke-width="1.5" stroke-linecap="round">
+            <path d="M9 10A12 12 0 1 1 7 22"/><polyline points="4 10 9 10 9 5"/>
+          </svg>
+          <p class="part-desc">The five most common failure modes and how to fix them. Stuck sessions, wrong outputs, runaway tasks, and how to rewind without losing work.</p>
+        </div></div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -472,6 +554,11 @@ footer a:hover{color:var(--lime)}
 <script>
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.04,rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%6)*60+'ms';io.observe(el)});
+function togglePart(el){
+  const isOpen=el.classList.contains('open');
+  document.querySelectorAll('.part.open').forEach(p=>p.classList.remove('open'));
+  if(!isOpen)el.classList.add('open');
+}
 </script>
 </body>
 </html>
