@@ -3,31 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Claude Code Field Manual — Free 110-Page Guide for Operators</title>
-<meta name="description" content="A free 110-page field manual for using Claude Code without writing code. 10 real project playbooks: dashboards, briefings, agents. No email required.">
-<meta property="og:title" content="Claude Code Field Manual by Ofir Bloch">
-<meta property="og:description" content="The field manual for turning Claude Code into dashboards, briefings, and working agents. 110 pages, 10 playbooks, free, no email.">
+<title>Claude Field Manual, Third Edition: Free 97-Page PDF</title>
+<meta name="description" content="A free field manual for people who already use Claude every day. Prompts to paste, settings to change, ten playbooks. Third edition, no email.">
+<meta property="og:title" content="Claude Field Manual by Ofir Bloch">
+<meta property="og:description" content="Prompts to paste, settings to change and ten playbooks you can run this week. Free PDF, no email.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://manual.ofirbloch.com">
 <meta property="og:image" content="https://manual.ofirbloch.com/images/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Claude Code Field Manual by Ofir Bloch — free guide for non-developer operators.">
+<meta property="og:image:alt" content="Claude Field Manual by Ofir Bloch, third edition, December 2026.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Claude Code Field Manual by Ofir Bloch">
-<meta name="twitter:description" content="110 pages, 10 playbooks, 0 code required. Free download, no email.">
+<meta name="twitter:title" content="Claude Field Manual by Ofir Bloch">
+<meta name="twitter:description" content="Free PDF, no email. Ten playbooks and an index of every setting, for people who already use Claude every day.">
 <meta name="twitter:image" content="https://manual.ofirbloch.com/images/og-card.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Book",
-  "name": "Claude Code Field Manual",
+  "name": "Claude Field Manual",
   "author": {"@type": "Person", "name": "Ofir Bloch", "url": "https://www.linkedin.com/in/ofirbloch/"},
   "url": "https://manual.ofirbloch.com",
-  "description": "A field manual for using Claude Code without writing code. 10 real project playbooks for operators, marketers, and executives.",
+  "description": "A field manual for people who already use Claude every day, with prompts to paste, settings to change and ten playbooks.",
   "inLanguage": "en",
   "isAccessibleForFree": true,
-  "numberOfPages": 110
+  "numberOfPages": 97
 }
 </script>
 <link rel="canonical" href="https://manual.ofirbloch.com/">
@@ -144,6 +144,8 @@ section{padding:80px 0}
 /* inside parts */
 .inside{border-bottom:1px solid var(--gray-dark)}
 .parts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gray-dark);border:1px solid var(--gray-dark)}
+.parts>:last-child:nth-child(3n+1){grid-column:1/-1}
+@media (max-width:1024px){.parts>:last-child:nth-child(3n+1){grid-column:auto}.parts>:last-child:nth-child(2n+1){grid-column:1/-1}}
 .part{background:var(--bg);padding:28px 30px;transition:background .2s;cursor:pointer;user-select:none}
 .part:hover{background:var(--crush)}
 .part.open{background:var(--crush)}
@@ -213,7 +215,6 @@ footer a:hover{color:var(--lime)}
   .stats .wrap{grid-template-columns:repeat(2,1fr)}
   .stat{border-left:none;border-top:1px solid var(--gray-dark)}
   .stat:nth-child(-n+2){border-top:none}
-  .roles-strip .rl{display:none}
   .cards{grid-template-columns:1fr}
   .parts{grid-template-columns:repeat(2,1fr)}
   .author-grid{grid-template-columns:1fr}
@@ -240,6 +241,7 @@ footer a:hover{color:var(--lime)}
 .who-head .sec-head{margin-bottom:0}
 .who-img{overflow:hidden;border:1px solid var(--gray-dark)}
 .who-img img{width:100%;display:block;opacity:.84}
+@media(max-width:1024px){.who-head{grid-template-columns:1fr;gap:32px}.who-img{display:none}}
 
 /* editorial section break strip */
 .section-break{display:flex;align-items:center;padding:0 24px;margin:0}
@@ -257,22 +259,22 @@ footer a:hover{color:var(--lime)}
 
 <div class="topbar">
   <div class="wrap">
-    <a class="brand" href="#top">CLAUDE CODE <b>FIELD MANUAL</b></a>
-    <a class="toplink" href="/Claude_Code_Field_Manual_v2.pdf" data-umami-event="download-topbar">GET THE PDF</a>
+    <a class="brand" href="#top">CLAUDE <b>FIELD MANUAL</b></a>
+    <a class="toplink" href="/Claude_Field_Manual_v3.pdf" data-umami-event="download-topbar">GET THE PDF</a>
   </div>
 </div>
 
 <header class="hero dotfield" id="top">
   <div class="hero-grid">
     <div class="hero-left">
-      <div class="micro rv">FREE <span class="tick">/</span> 2026 EDITION <span class="tick">/</span> OFIR BLOCH</div>
+      <div class="micro rv">FREE <span class="tick">/</span> THIRD EDITION, DECEMBER 2026 <span class="tick">/</span> OFIR BLOCH</div>
       <h1 class="rv">You<br>outgrew the<br>chat window</h1>
-      <p class="hero-sub rv">Ofir Bloch's field manual for using Claude. Ten real project playbooks, no code required. Free PDF.</p>
+      <p class="hero-sub rv">Ofir Bloch's field manual for using Claude, third edition. Ten project playbooks, updated for everything that changed in 2026. Free PDF.</p>
       <div class="cta-row rv">
-        <a class="btn" href="/Claude_Code_Field_Manual_v2.pdf" data-umami-event="download-hero">Download the PDF <span style="font-size:.75em;opacity:.7;font-family:var(--mono);font-weight:400">16 MB</span></a>
+        <a class="btn" href="/Claude_Field_Manual_v3.pdf" data-umami-event="download-hero">Download the PDF <span style="font-size:.75em;opacity:.7;font-family:var(--mono);font-weight:400">17 MB</span></a>
         <a class="btn-ghost" href="#whats-inside">See what's inside</a>
       </div>
-      <p class="cta-note rv">free <span style="color:var(--gray-mid)">//</span> 110 pages <span style="color:var(--gray-mid)">//</span> nothing to fill in</p>
+      <p class="cta-note rv">free <span style="color:var(--gray-mid)">//</span> 97 pages <span style="color:var(--gray-mid)">//</span> no email</p>
     </div>
     <div class="hero-img-wrap rv" aria-hidden="true">
       <img src="/hero-iso.png" alt="" fetchpriority="high">
@@ -282,22 +284,18 @@ footer a:hover{color:var(--lime)}
 
 <div class="stats">
   <div class="wrap">
-    <div class="stat rv"><div class="n">110</div><div class="l">Pages</div></div>
+    <div class="stat rv"><div class="n">97</div><div class="l">Pages</div></div>
     <div class="stat rv"><div class="n">10</div><div class="l">Playbooks</div></div>
-    <div class="stat lit rv"><div class="n">0</div><div class="l">Code Required</div></div>
-    <div class="stat rv"><div class="n">FREE</div><div class="l">Always</div></div>
+    <div class="stat rv"><div class="n">10</div><div class="l">Parts</div></div>
+    <div class="stat rv"><div class="n">FREE</div><div class="l">No email</div></div>
   </div>
 </div>
 
 <div class="roles-strip">
   <div class="wrap">
-    <span class="micro" style="white-space:nowrap">READ BY</span>
+    <span class="micro" style="white-space:nowrap">WRITTEN FOR</span>
     <div class="rl">
-      <span>Marketing Managers</span><span class="dot">·</span>
-      <span>Ops Leads</span><span class="dot">·</span>
-      <span>Customer Success</span><span class="dot">·</span>
-      <span>Revenue &amp; BizOps</span><span class="dot">·</span>
-      <span>Non-technical Execs</span>
+      <span>people who already use Claude every day</span>
     </div>
   </div>
 </div>
@@ -307,7 +305,7 @@ footer a:hover{color:var(--lime)}
     <div class="who-head">
       <div class="sec-head rv">
         <div class="micro">WHO THIS IS FOR</div>
-        <h2>Built for operators who <em>don't write code</em></h2>
+        <h2>Built for people who <em>already use Claude every day</em></h2>
       </div>
       <div class="who-img rv">
         <img src="/who-iso.png" alt="Isometric illustration of an operator workstation" loading="lazy">
@@ -326,7 +324,7 @@ footer a:hover{color:var(--lime)}
           </svg>
         </div>
         <div class="tag">Marketing</div>
-        <p>Build the dashboards, trackers, and landing pages you want, in an afternoon, without a ticket.</p>
+        <p>Build an event page in an afternoon, a competitor watch that marks the pages that failed to load, an email sequence with three versions of email 1, and decks from one design system.</p>
       </div>
       <div class="card rv">
         <div class="card-icon">
@@ -342,7 +340,7 @@ footer a:hover{color:var(--lime)}
           </svg>
         </div>
         <div class="tag">Ops, CS &amp; Revenue</div>
-        <p>Automate the reports your team dreads, build FAQ bots that match your real product, keep your wiki current.</p>
+        <p>Run a Monday digest that fails loud, answer support questions from your own docs, score leads with a spot check, and turn a weekly chore into a tool.</p>
       </div>
       <div class="card rv">
         <div class="card-icon">
@@ -356,8 +354,8 @@ footer a:hover{color:var(--lime)}
             <circle cx="22" cy="22" r="2.5" fill="#D3FC08"/>
           </svg>
         </div>
-        <div class="tag">Execs &amp; Team Leads</div>
-        <p>Understand what AI can actually ship today, set honest expectations with your team, and identify the use cases worth prioritizing now.</p>
+        <div class="tag">Team leads</div>
+        <p>Put a setting behind anything that must never happen, set up every client project the same way, and check whose access a published page or a Claude answer in Slack runs on.</p>
       </div>
     </div>
   </div>
@@ -367,88 +365,213 @@ footer a:hover{color:var(--lime)}
   <div class="wrap">
     <div class="sec-head rv">
       <div class="micro">WHAT'S INSIDE</div>
-      <h2>From "what is this thing" to <em>shipping real tools</em></h2>
+      <h2>It starts with <em>what changed in 2026</em></h2>
     </div>
     <div class="parts">
 
       <div class="part rv" onclick="togglePart(this)">
         <div class="part-head">
-          <div><div class="num">01</div><h3>What Is This Thing?</h3></div>
+          <div><div class="num">01</div><h3>The 2026 Map</h3></div>
           <span class="part-indicator">+</span>
         </div>
         <div class="part-body"><div class="part-body-inner">
           <svg class="part-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#D3FC08" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 5a9 9 0 0 1 6 15.5V23H12v-2.5A9 9 0 0 1 18 5z"/><line x1="14" y1="27" x2="22" y2="27"/><line x1="15.5" y1="31" x2="20.5" y2="31"/>
           </svg>
-          <p class="part-desc">Claude Code reads your files, writes code, and runs commands. This part explains why it works differently from ChatGPT and how to stop fighting it.</p>
+          <p class="part-desc">The habits from your first year that changed in 2026, when to ask, run a task or build a system, and Opus 5.5 at medium as the everyday setting.</p>
         </div></div>
       </div>
 
       <div class="part rv" onclick="togglePart(this)">
         <div class="part-head">
-          <div><div class="num">02</div><h3>Start Here: Cowork</h3></div>
+          <div><div class="num">02</div><h3>Cowork in Any Conversation</h3></div>
           <span class="part-indicator">+</span>
         </div>
         <div class="part-body"><div class="part-body-inner">
           <svg class="part-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#D3FC08" stroke-width="1.5" stroke-linecap="round">
             <rect x="4" y="11" width="28" height="19" rx="2"/><path d="M4 16h28"/><rect x="8" y="7" width="10" height="6" rx="1"/>
           </svg>
-          <p class="part-desc">No terminal required. Cowork is the browser tab where most operators start. Permission modes, your first three builds, and what actually matters.</p>
+          <p class="part-desc">Cowork now runs inside any conversation. Where a task runs, a messy export turned into a clean report, tool permissions set once, and when to use Chrome or computer use.</p>
         </div></div>
       </div>
 
       <div class="part rv" onclick="togglePart(this)">
         <div class="part-head">
-          <div><div class="num">03</div><h3>Level Up: Claude Code Desktop</h3></div>
+          <div><div class="num">03</div><h3>The Code Tab and the Terminal</h3></div>
           <span class="part-indicator">+</span>
         </div>
         <div class="part-body"><div class="part-body-inner">
           <svg class="part-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#D3FC08" stroke-width="1.5" stroke-linecap="round">
             <rect x="4" y="8" width="28" height="20" rx="2"/><path d="M10 17l5 4-5 4"/><line x1="18" y1="25" x2="26" y2="25"/>
           </svg>
-          <p class="part-desc">Project memory, custom agents, scheduled tasks. When to upgrade from Cowork, what changes, and how to set up the features that make Claude feel like a team member.</p>
+          <p class="part-desc">One folder per project, permission modes, saved approvals you can prune, rewind, /goal, parallel sessions, and claude -p for scripts.</p>
         </div></div>
       </div>
 
       <div class="part rv" onclick="togglePart(this)">
         <div class="part-head">
-          <div><div class="num">04</div><h3>Talking to Claude So It Actually Gets It</h3></div>
+          <div><div class="num">04</div><h3>Talking to Claude</h3></div>
           <span class="part-indicator">+</span>
         </div>
         <div class="part-body"><div class="part-body-inner">
           <svg class="part-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#D3FC08" stroke-width="1.5" stroke-linecap="round">
             <path d="M4 8h28v17H20l-6 5v-5H4z"/><line x1="10" y1="14" x2="26" y2="14"/><line x1="10" y1="19" x2="20" y2="19"/>
           </svg>
-          <p class="part-desc">What you get back tracks the quality of your brief. Five rules, one kickoff skeleton, and the interview technique that works on every task type.</p>
+          <p class="part-desc">Let Claude interview you, read the plan like a quote, use a kickoff skeleton for any build, and paste six lines into your global instructions.</p>
         </div></div>
       </div>
 
       <div class="part rv" onclick="togglePart(this)">
         <div class="part-head">
-          <div><div class="num">05</div><h3>The Safety Stuff</h3></div>
+          <div><div class="num">05</div><h3>Your Second Brain</h3></div>
           <span class="part-indicator">+</span>
         </div>
         <div class="part-body"><div class="part-body-inner">
           <svg class="part-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#D3FC08" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 4l12 5v9c0 7-5 12-12 14C11 30 6 25 6 18V9z"/><path d="M13 18l3 3 7-7"/>
           </svg>
-          <p class="part-desc">What Claude can and can't touch, how to review before it runs, and what to do when it surprises you. Enough to work confidently without being paranoid.</p>
+          <p class="part-desc">Every place Claude remembers you and the switch for each, the client project setup, a starter CLAUDE.md, handoff notes and named sessions.</p>
         </div></div>
       </div>
 
       <div class="part rv" onclick="togglePart(this)">
         <div class="part-head">
-          <div><div class="num">06</div><h3>When Things Go Wrong</h3></div>
+          <div><div class="num">06</div><h3>Skills and Plugins</h3></div>
           <span class="part-indicator">+</span>
         </div>
         <div class="part-body"><div class="part-body-inner">
           <svg class="part-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#D3FC08" stroke-width="1.5" stroke-linecap="round">
             <path d="M9 10A12 12 0 1 1 7 22"/><polyline points="4 10 9 10 9 5"/>
           </svg>
-          <p class="part-desc">The five most common failure modes and how to fix them. Stuck sessions, wrong outputs, runaway tasks, and how to rewind without losing work.</p>
+          <p class="part-desc">Turn a conversation into a skill, check that it fires, feed every skill from one rulebook, and check a plugin's context cost before you install it.</p>
         </div></div>
       </div>
 
+      <div class="part rv" onclick="togglePart(this)">
+        <div class="part-head">
+          <div><div class="num">07</div><h3>Put It on a Schedule</h3></div>
+          <span class="part-indicator">+</span>
+        </div>
+        <div class="part-body"><div class="part-body-inner">
+          <svg class="part-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#D3FC08" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 5a9 9 0 0 1 6 15.5V23H12v-2.5A9 9 0 0 1 18 5z"/><line x1="14" y1="27" x2="22" y2="27"/><line x1="15.5" y1="31" x2="20.5" y2="31"/>
+          </svg>
+          <p class="part-desc">Where a scheduled task runs decides when it can run. Also inside: a morning brief with its checks built in, local time, and read tools for unattended runs.</p>
+        </div></div>
+      </div>
+
+      <div class="part rv" onclick="togglePart(this)">
+        <div class="part-head">
+          <div><div class="num">08</div><h3>Make It Look Good</h3></div>
+          <span class="part-indicator">+</span>
+        </div>
+        <div class="part-body"><div class="part-body-inner">
+          <svg class="part-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#D3FC08" stroke-width="1.5" stroke-linecap="round">
+            <rect x="4" y="11" width="28" height="19" rx="2"/><path d="M4 16h28"/><rect x="8" y="7" width="10" height="6" rx="1"/>
+          </svg>
+          <p class="part-desc">Name the output and the export up front, build the design system before the first slide, review a deck by talking through it, and check whose access a published page runs on.</p>
+        </div></div>
+      </div>
+
+      <div class="part rv" onclick="togglePart(this)">
+        <div class="part-head">
+          <div><div class="num">09</div><h3>Hire a Team, Not an Assistant</h3></div>
+          <span class="part-indicator">+</span>
+        </div>
+        <div class="part-body"><div class="part-body-inner">
+          <svg class="part-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#D3FC08" stroke-width="1.5" stroke-linecap="round">
+            <rect x="4" y="8" width="28" height="20" rx="2"/><path d="M10 17l5 4-5 4"/><line x1="18" y1="25" x2="26" y2="25"/>
+          </svg>
+          <p class="part-desc">Name the model for every helper, let Haiku helpers read while Opus compares, and know whose access Claude in Slack and Meetings answers with.</p>
+        </div></div>
+      </div>
+
+      <div class="part rv" onclick="togglePart(this)">
+        <div class="part-head">
+          <div><div class="num">10</div><h3>The Safety Stuff</h3></div>
+          <span class="part-indicator">+</span>
+        </div>
+        <div class="part-body"><div class="part-body-inner">
+          <svg class="part-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#D3FC08" stroke-width="1.5" stroke-linecap="round">
+            <path d="M4 8h28v17H20l-6 5v-5H4z"/><line x1="10" y1="14" x2="26" y2="14"/><line x1="10" y1="19" x2="20" y2="19"/>
+          </svg>
+          <p class="part-desc">A setting for anything that must never happen, orders hidden in what Claude reads, what never goes in a prompt, hooks, and checking the work before you call it done.</p>
+        </div></div>
+      </div>
+
+      <div class="part rv" onclick="togglePart(this)">
+        <div class="part-head">
+          <div><div class="num">11</div><h3>Super Prompts and When Things Go Wrong</h3></div>
+          <span class="part-indicator">+</span>
+        </div>
+        <div class="part-body"><div class="part-body-inner">
+          <svg class="part-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#D3FC08" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 4l12 5v9c0 7-5 12-12 14C11 30 6 25 6 18V9z"/><path d="M13 18l3 3 7-7"/>
+          </svg>
+          <p class="part-desc">Have Claude critique how you use it, find the gap before someone else does, and turn rough notes into a decision brief. Then fixes for confident wrong answers and drained usage.</p>
+        </div></div>
+      </div>
+
+      <div class="part rv" onclick="togglePart(this)">
+        <div class="part-head">
+          <div><div class="num">12</div><h3>The Author's Top 10</h3></div>
+          <span class="part-indicator">+</span>
+        </div>
+        <div class="part-body"><div class="part-body-inner">
+          <svg class="part-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#D3FC08" stroke-width="1.5" stroke-linecap="round">
+            <path d="M9 10A12 12 0 1 1 7 22"/><polyline points="4 10 9 10 9 5"/>
+          </svg>
+          <p class="part-desc">Nine installs and one built-in command the author sets up on every new machine.</p>
+        </div></div>
+      </div>
+
+      <div class="part rv" onclick="togglePart(this)">
+        <div class="part-head">
+          <div><div class="num">13</div><h3>Quick Reference</h3></div>
+          <span class="part-indicator">+</span>
+        </div>
+        <div class="part-body"><div class="part-body-inner">
+          <svg class="part-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#D3FC08" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 5a9 9 0 0 1 6 15.5V23H12v-2.5A9 9 0 0 1 18 5z"/><line x1="14" y1="27" x2="22" y2="27"/><line x1="15.5" y1="31" x2="20.5" y2="31"/>
+          </svg>
+          <p class="part-desc">Claude Code controls, slash commands, models and plans as of the print date, and where every setting lives.</p>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="who" id="new-in-this-edition">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>New in this edition</h2>
+    </div>
+    <div class="cards">
+      <div class="card rv">
+        <div class="tag">01</div>
+        <p>Start here: six changes to make tonight.</p>
+      </div>
+      <div class="card rv">
+        <div class="tag">02</div>
+        <p>A table of twelve habits from your first year that changed in 2026.</p>
+      </div>
+      <div class="card rv">
+        <div class="tag">03</div>
+        <p>A new part, Make It Look Good, covering design systems, decks and published pages.</p>
+      </div>
+      <div class="card rv">
+        <div class="tag">04</div>
+        <p>New pages on parallel work, headless runs with claude -p, and named sessions.</p>
+      </div>
+      <div class="card rv">
+        <div class="tag">05</div>
+        <p>Three new playbooks: a follow-up catcher, meeting to follow-ups, and a weekly chore turned into a tool.</p>
+      </div>
+      <div class="card rv">
+        <div class="tag">06</div>
+        <p>Every page is tagged App, Code tab or Terminal, and every volatile fact is dated to its source.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -463,69 +586,69 @@ footer a:hover{color:var(--lime)}
   <div class="wrap">
     <div class="sec-head rv">
       <div class="micro">INCLUDED</div>
-      <h2>10 copy-paste <em>project playbooks</em></h2>
-      <p>Real projects with exact prompts. Each playbook tells you who it's for, what you'll build, and how long it takes.</p>
+      <h2>10 copy-paste <em>playbooks</em></h2>
+      <p>Each one gives you the prompt to paste, the steps, and the time printed on the page. A tag on each page says where it runs: App or Code tab.</p>
     </div>
 
-    <details class="pb rv"><summary><span class="idx">01</span><span class="t">Spreadsheet to Dashboard</span><span class="time">30-60 min</span><span class="chev">&gt;</span></summary>
-      <div class="body"><p>Your boss wants a dashboard. You have the data in Excel. Skip the six-week dev request.</p>
-      <p class="build"><b>YOU'LL BUILD:</b> a live dashboard with charts and filters your team can bookmark and check anytime.</p>
-      <p class="meta">FOR: marketing ops, sales ops, CS leads · LEVEL: beginner-friendly</p></div>
+    <details class="pb rv"><summary><span class="idx">01</span><span class="t">Spreadsheet to a weekly dashboard</span><span class="time">45 min</span><span class="chev">&gt;</span></summary>
+      <div class="body"><p>Attach the export and the dashboard comes back as an artifact. It is a snapshot of that one file.</p>
+      <p class="build"><b>YOU'LL BUILD:</b> a three-chart dashboard artifact, rebuilt each Monday from the new export.</p>
+      <p class="meta">RUNS IN: App</p></div>
     </details>
-    <details class="pb rv"><summary><span class="idx">02</span><span class="t">Marketing Website</span><span class="time">1-2 hrs</span><span class="chev">&gt;</span></summary>
-      <div class="body"><p>A professional site you control, without waiting for the web team.</p>
-      <p class="build"><b>YOU'LL BUILD:</b> a multi-page website (home, about, contact) you can deploy and share a real URL for.</p>
-      <p class="meta">FOR: marketing managers, founders · LEVEL: intermediate</p></div>
+    <details class="pb rv"><summary><span class="idx">02</span><span class="t">A marketing or event page in an afternoon</span><span class="time">2-3 hr</span><span class="chev">&gt;</span></summary>
+      <div class="body"><p>Write the design system and the event facts first, and the page comes from those two files.</p>
+      <p class="build"><b>YOU'LL BUILD:</b> a one-page site with the program, the people and your own form tool's embed, plus three headlines to pick from.</p>
+      <p class="meta">RUNS IN: Code tab</p></div>
     </details>
-    <details class="pb rv"><summary><span class="idx">03</span><span class="t">Monday Morning Report</span><span class="time">15 min first run</span><span class="chev">&gt;</span></summary>
-      <div class="body"><p>The report your boss reads every Monday, built automatically from your data. Saves 30-45 minutes a week.</p>
-      <p class="build"><b>YOU'LL BUILD:</b> a formatted executive summary that refreshes in minutes.</p>
-      <p class="meta">FOR: anyone reporting metrics · LEVEL: easiest project · 2 min after first run</p></div>
+    <details class="pb rv"><summary><span class="idx">03</span><span class="t">A Monday digest that fails loud</span><span class="time">1 hr</span><span class="chev">&gt;</span></summary>
+      <div class="body"><p>If the sales export is missing, empty or older than expected, the first line says FAILED.</p>
+      <p class="build"><b>YOU'LL BUILD:</b> a scheduled Monday digest saved as a Google Doc, with an email draft you send yourself.</p>
+      <p class="meta">RUNS IN: App</p></div>
     </details>
-    <details class="pb rv"><summary><span class="idx">04</span><span class="t">Competitive Intel Tracker</span><span class="time">45 min setup</span><span class="chev">&gt;</span></summary>
-      <div class="body"><p>Know what your competitors are doing. Organized, searchable, shareable.</p>
-      <p class="build"><b>YOU'LL BUILD:</b> a competitive intelligence spreadsheet you update monthly by dropping in new materials.</p>
-      <p class="meta">FOR: product marketing, strategy · LEVEL: beginner-friendly · 15 min monthly</p></div>
+    <details class="pb rv"><summary><span class="idx">04</span><span class="t">A competitor watch with a freshness check</span><span class="time">90 min</span><span class="chev">&gt;</span></summary>
+      <div class="body"><p>The cheap failure is a confident summary of a page that never loaded.</p>
+      <p class="build"><b>YOU'LL BUILD:</b> a weekly log that marks each page OK, CHANGED, FAILED or STALE.</p>
+      <p class="meta">RUNS IN: App</p></div>
     </details>
-    <details class="pb rv"><summary><span class="idx">05</span><span class="t">Customer FAQ Bot</span><span class="time">3-5 hrs</span><span class="chev">&gt;</span></summary>
-      <div class="body"><p>A chatbot that answers from your documentation and admits when it doesn't know.</p>
-      <p class="build"><b>YOU'LL BUILD:</b> a chat widget that searches your docs, cites sources, and says "I don't know" when it should.</p>
-      <p class="meta">FOR: customer success, support · LEVEL: most complex, most valuable</p></div>
+    <details class="pb rv"><summary><span class="idx">05</span><span class="t">An FAQ or team wiki from your own docs</span><span class="time">1 hr</span><span class="chev">&gt;</span></summary>
+      <div class="body"><p>Start from the questions in your support inbox. Anything your docs cannot answer comes back as NOT IN DOCS.</p>
+      <p class="build"><b>YOU'LL BUILD:</b> a searchable FAQ page, or a team wiki that lists every place two documents disagree.</p>
+      <p class="meta">RUNS IN: App</p></div>
     </details>
-    <details class="pb rv"><summary><span class="idx">06</span><span class="t">Event Landing Page</span><span class="time">1-2 hrs</span><span class="chev">&gt;</span></summary>
-      <div class="body"><p>A page for your next webinar, conference, or product launch. Live by the end of the day.</p>
-      <p class="build"><b>YOU'LL BUILD:</b> a landing page with countdown timer, speaker bios, and a working registration form.</p>
-      <p class="meta">FOR: event marketers, demand gen · LEVEL: intermediate</p></div>
+    <details class="pb rv"><summary><span class="idx">06</span><span class="t">Lead scoring with a spot check</span><span class="time">1 hr</span><span class="chev">&gt;</span></summary>
+      <div class="body"><p>One column per rule, so you can check every total by eye.</p>
+      <p class="build"><b>YOU'LL BUILD:</b> a scored Google Sheet with a CUTOFF row, checked by hand on the five rows above it and the five below.</p>
+      <p class="meta">RUNS IN: App</p></div>
     </details>
-    <details class="pb rv"><summary><span class="idx">07</span><span class="t">Team Wiki / Knowledge Base</span><span class="time">2-3 hrs</span><span class="chev">&gt;</span></summary>
-      <div class="body"><p>Stop answering the same question in Slack for the fifteenth time.</p>
-      <p class="build"><b>YOU'LL BUILD:</b> an internal wiki with search, categories, and a simple way to add new articles.</p>
-      <p class="meta">FOR: team leads, ops managers · LEVEL: intermediate</p></div>
+    <details class="pb rv"><summary><span class="idx">07</span><span class="t">An email sequence, with three versions of email 1</span><span class="time">90 min</span><span class="chev">&gt;</span></summary>
+      <div class="body"><p>Email 1 is the one you will test, so it is the only one that gets versions.</p>
+      <p class="build"><b>YOU'LL BUILD:</b> a five-email sequence in one Google Doc, written only from your own facts file.</p>
+      <p class="meta">RUNS IN: App</p></div>
     </details>
-    <details class="pb rv"><summary><span class="idx">08</span><span class="t">Lead Scoring Prototype</span><span class="time">1-2 hrs</span><span class="chev">&gt;</span></summary>
-      <div class="body"><p>Score your leads on your own criteria. No expensive tool required.</p>
-      <p class="build"><b>YOU'LL BUILD:</b> a scoring engine that reads your CSV, applies your rules, and outputs a ranked lead list.</p>
-      <p class="meta">FOR: sales ops, revenue ops · LEVEL: intermediate</p></div>
+    <details class="pb rv"><summary><span class="idx">08</span><span class="t">A follow-up catcher that only drafts</span><span class="time">30 min</span><span class="chev">&gt;</span></summary>
+      <div class="body"><p>It reads your sent mail for follow-ups you promised and saves a reply in each thread as a draft.</p>
+      <p class="build"><b>YOU'LL BUILD:</b> a weekday scheduled task with send set to Blocked.</p>
+      <p class="meta">RUNS IN: App</p></div>
     </details>
-    <details class="pb rv"><summary><span class="idx">09</span><span class="t">Finance Tracker</span><span class="time">1-2 hrs</span><span class="chev">&gt;</span></summary>
-      <div class="body"><p>Track your finances without giving your bank login to another app. Everything stays on your computer.</p>
-      <p class="build"><b>YOU'LL BUILD:</b> a personal finance tracker with auto-categorization, charts, and actual-vs-target comparisons.</p>
-      <p class="meta">FOR: anyone tracking finances · LEVEL: intermediate</p></div>
+    <details class="pb rv"><summary><span class="idx">09</span><span class="t">Meeting to follow-ups</span><span class="time">15 min</span><span class="chev">&gt;</span></summary>
+      <div class="body"><p>Decisions, owners and due dates from the transcript, each with the line behind it.</p>
+      <p class="build"><b>YOU'LL BUILD:</b> a decisions table and one Gmail draft per owner, which you edit and send yourself.</p>
+      <p class="meta">RUNS IN: App</p></div>
     </details>
-    <details class="pb rv"><summary><span class="idx">10</span><span class="t">Email Campaign Builder</span><span class="time">20-30 min</span><span class="chev">&gt;</span></summary>
-      <div class="body"><p>Plan and draft an entire email sequence in your brand voice: subject lines, body copy, and CTAs for all five emails.</p>
-      <p class="build"><b>YOU'LL BUILD:</b> a complete 5-email nurture sequence ready to paste into your email platform.</p>
-      <p class="meta">FOR: email marketers, demand gen · LEVEL: easiest project</p></div>
+    <details class="pb rv"><summary><span class="idx">10</span><span class="t">A weekly chore turned into a tool</span><span class="time">an afternoon</span><span class="chev">&gt;</span></summary>
+      <div class="body"><p>Claude interviews you, writes PLAN.md and builds against last week's files. Money or customer records need a technical reviewer before it runs live.</p>
+      <p class="build"><b>YOU'LL BUILD:</b> a tool you run with one command each week, checked row by row against a file merged by hand.</p>
+      <p class="meta">RUNS IN: Code tab</p></div>
     </details>
   </div>
 </section>
 
 <section class="bottom dotfield" id="cta-bottom">
   <div class="cta-centered">
-    <h2 class="rv">Build the first<br>one this weekend</h2>
-    <p class="rv">Start with playbook 03, the Monday morning report. Fifteen minutes for the first run, and the rest get easier from there.</p>
-    <a class="btn rv" href="/Claude_Code_Field_Manual_v2.pdf" data-umami-event="download-bottom">Download the PDF</a>
-    <p class="cta-note rv" style="margin-top:18px">free <span style="color:var(--gray-mid)">//</span> 110 pages <span style="color:var(--gray-mid)">//</span> no email</p>
+    <h2 class="rv">Start with six<br>changes tonight</h2>
+    <p class="rv">The book opens with six changes to make tonight, from client project memory to a FAILED line for scheduled tasks. Then pick one playbook to run this week.</p>
+    <a class="btn rv" href="/Claude_Field_Manual_v3.pdf" data-umami-event="download-bottom">Download the PDF</a>
+    <p class="cta-note rv" style="margin-top:18px">free <span style="color:var(--gray-mid)">//</span> 97 pages <span style="color:var(--gray-mid)">//</span> no email</p>
   </div>
 </section>
 
@@ -536,7 +659,7 @@ footer a:hover{color:var(--lime)}
       <div class="micro rv">THE AUTHOR</div>
       <h3 class="rv">Ofir Bloch</h3>
       <div class="role rv">SVP, Corporate Marketing</div>
-      <p class="rv">SVP Corporate Marketing at WalkMe, an SAP company. Co-authored two books with Wiley. The systems in this manual are the ones I actually run: <b>the morning briefing, the dashboards, the agents</b>. Every playbook started as a real build inside a real marketing org.</p>
+      <p class="rv">A Claude user with no affiliation to Anthropic. The Top 10 in this edition is the setup he installs on every new machine.</p>
       <div class="links rv">
         <a class="btn-ghost" href="https://www.linkedin.com/in/ofirbloch/" target="_blank" rel="noopener">Follow on LinkedIn</a>
       </div>
@@ -546,7 +669,7 @@ footer a:hover{color:var(--lime)}
 
 <footer>
   <div class="wrap">
-    <span>© 2026 OFIR BLOCH</span>
+    <span>© 2026 OFIR BLOCH · UNOFFICIAL. NOT AFFILIATED WITH ANTHROPIC.</span>
     <span><a href="https://www.linkedin.com/in/ofirbloch/" target="_blank" rel="noopener">LINKEDIN</a></span>
   </div>
 </footer>
